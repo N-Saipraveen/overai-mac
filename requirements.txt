@@ -1,0 +1,5 @@
+pyobjc
+pyobjc-framework-Quartz
+pyobjc-framework-WebKit
+setuptools
+py2app ; platform_system == "Darwin"
