@@ -92,3 +92,104 @@ Feel free to open a pull request or submit an issue on GitHub.
 ## 📄 License
 
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
+# OverAI
+
+**OverAI** is a professional, always‑on‑top macOS overlay that runs locally via `overai.py`. Designed for seamless access to any AI chat service—Grok, ChatGPT, DeepSeek, or your own endpoint—OverAI sits hidden during meetings and presentations, then reappears at your command.
+
+---
+
+## 🚀 Core Features
+
+- **Local Execution**  
+  Runs directly from your machine with Python: no installer or DMG required.  
+- **Meeting‑Aware Visibility**  
+  Automatically hides when calendar events or conferencing apps (Zoom, Teams, Webex) are active.  
+- **Universal AI Selector**  
+  Instantly switch between Grok, ChatGPT, DeepSeek, or any custom HTTP endpoint.  
+- **Voice & Text Input**  
+  Click the microphone icon or type your prompt.  
+- **Adjustable Transparency**  
+  Slide or click **+ / −** to set your preferred overlay opacity.  
+- **Configurable Global Hotkey**  
+  Default **⌘+G** toggles visibility—fully customizable via `config.json`.  
+- **Frameless & Lightweight**  
+  A sleek, distraction‑free window that blends into your workflow.
+
+---
+
+## 📦 Installation & Setup
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/N-Saipraveen/overai-mac.git
+   cd overai-mac
+   ```
+
+2. **Create and activate a virtual environment**  
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+3. **Install dependencies**  
+   ```bash
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+
+4. **Configure (optional)**  
+   Copy `config.example.json` to `config.json` and adjust service URLs, hotkey, transparency limits, or meeting‑app integration.
+
+5. **Run OverAI**  
+   ```bash
+   python overai.py
+   ```
+
+The overlay will launch, ready to serve your AI needs—hidden when you’re in calls, visible on your hotkey.
+
+---
+
+## ⚙️ Configuration
+
+Edit `config.json` to customize:
+
+```jsonc
+{
+  "services": {
+    "Grok": "https://grok.com",
+    "ChatGPT": "https://chat.openai.com",
+    "DeepSeek": "https://deepseek.com/chat"
+  },
+  "hotkey": "Command+G",
+  "minOpacity": 0.2,
+  "maxOpacity": 1.0,
+  "meetingApps": ["zoom.us", "teams", "webex"]
+}
+```
+
+- **services**: Add or remove AI endpoints.  
+- **hotkey**: Use any standard key combination.  
+- **minOpacity / maxOpacity**: Define transparency range.  
+- **meetingApps**: Specify process names to auto-hide overlay.
+
+---
+
+## 🛠️ Development
+
+- **Run tests** (if any): `pytest tests/`  
+- **Lint & format**: `flake8` / `black .`  
+- **Build**: Create a standalone macOS app via PyInstaller or py2app when needed.
+
+---
+
+## 🤝 Contributing
+
+We welcome improvements, bug reports, and new features.  
+Please fork the repo, create a feature branch, and submit a pull request.
+
+---
+
+## 📄 License
+
+Licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
