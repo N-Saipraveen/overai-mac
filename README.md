@@ -1,76 +1,89 @@
+# 🧠 OverAI — Stealth AI Overlay for macOS
 
+**OverAI** is a local-first, always-on-top AI overlay for macOS that gives you seamless, private access to your favorite LLMs like ChatGPT, Grok, Perplexity, Claude, and Gemini.
 
-# OverAI
-
-**OverAI** is a secure, always-on-top macOS overlay that runs locally via `overai.py`. Optimized for privacy, all processing happens in your browser and machine—no servers involved.
-
----
-
-## 📦 Quick Start
-
-1. **Download** the project archive (ZIP) or clone the Git repository:
-   ```bash
-   git clone https://github.com/N-Saipraveen/overai-mac.git
-   cd overai-mac
-   ```
-2. **Create & activate a virtual environment**:
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
-   ```
-3. **Install dependencies**:
-   ```bash
-   pip install --upgrade pip
-   pip install -r requirements.txt
-   ```
-4. **Run OverAI**:
-   ```bash
-   python overai.py
-   ```
-
-That’s it! OverAI will launch immediately.
+> **No servers. No tracking. No nonsense. Just powerful AI where you need it.**
 
 ---
 
-## 🚀 Key Features
+## 🚀 Quick Start
 
-- **Frameless Overlay**  
-  Always on top, blending into any workflow without distractions.
-- **Universal AI Access**  
-  Switch between Grok, ChatGPT, DeepSeek, or any custom endpoint.
-- **Voice & Text Input**  
-  Click the microphone icon or type your prompt directly.
-- **Adjustable Transparency**  
-  Use **+ / −** buttons or slide the transparency control to your liking.
-- **Customizable Hotkey**  
-  Default **⌘+G** to toggle visibility—configurable in `config.json`.
-- **Meeting-Aware Hiding**  
-  Automatically hides when conferencing apps (Zoom, Teams, Webex) are active.
-- **Local & Private**  
-  No data leaves your machine; all interactions flow through your browser session.
+```bash
+git clone https://github.com/N-Saipraveen/overai-mac.git
+cd overai-mac
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+pip install --upgrade pip
+pip install -r requirements.txt
+
+python overai.py
+```
+
+📅 OverAI launches instantly and stays ready on your screen.
 
 ---
 
-## 🔒 Permissions
+## 🛠 Configuration
 
-On first launch, OverAI will request two macOS permissions:
+- **Hotkey**: Default is `⌘ + G` — customizable in `config.json`
+- **AI Endpoints**: Choose ChatGPT, Grok, DeepSeek, etc. from the dropdown
+- **Auto-hide on Meetings**: Detects Zoom, Teams, Webex and hides the overlay
 
-1. **Microphone Access**  
-   Needed to capture your voice for prompts.
-2. **Accessibility Access**  
-   Required for the global hotkey (⌘+G) to show/hide the overlay.
+---
 
-You can review and revoke these anytime in **System Settings → Privacy & Security**.
+## 🔐 Permissions Required
+
+When you launch OverAI for the first time, macOS will request:
+
+- 🎙️ **Microphone Access** — to capture voice commands
+- ⌨️ **Accessibility Access** — to enable the global hotkey (⌘+G)
+
+You can manage these anytime from: **System Settings → Privacy & Security**
+
+---
+
+## ✨ Features
+
+| Feature                    | Description                                       |
+| -------------------------- | ------------------------------------------------- |
+| 🪟 Frameless Overlay       | Stays always on top, clean and distraction-free   |
+| 🧠 Multi-AI Support        | Easily switch between ChatGPT, Grok, Claude, etc. |
+| 🎙️ Voice & Text Input     | Speak or type your prompt directly                |
+| 🎛️ Transparency Control   | Adjust overlay opacity to your preference         |
+| 🎹 Hotkey Toggle           | `⌘+G` or any custom key combo to toggle overlay   |
+| 🕵️ Hidden from Recordings | Invisible in screen sharing and screen recordings |
+| 🖥️ Lightweight + Local    | No lag, no cloud storage, no external servers     |
+
+---
+
+## 💻 Tech Stack
+
+- Python 3.10+
+- AppKit, Quartz, WebKit
+- PyObjC
+- SpeechRecognition
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome!  
-Fork the repo, create a feature branch, and submit a pull request.
+Contributions welcome!
+
+- Fork the repo
+- Create a feature branch
+- Submit a pull request
 
 ---
 
-## 📄 License
+## 📜 License
 
 MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+## ⭐ Like it?
+
+If this project helped you, **please star the repo 🌟** — it really helps!
+
