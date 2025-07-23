@@ -7,7 +7,7 @@ from Quartz import (
 )
 
 # Main settings and constants for OverAI
-WEBSITE = "https://www.grok.com"  # Update to your real site if needed!
+WEBSITE = "https://www.grok.com"  
 LOGO_WHITE_PATH = "logo/logo_white.png"
 LOGO_BLACK_PATH = "logo/logo_black.png"
 FRAME_SAVE_NAME = "OverAIWindowFrame"
