@@ -195,7 +195,7 @@ def global_show_hide_listener(app):
             keycode = CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode)
             flags = CGEventGetFlags(event)
             # Debug print for key/flag detection
-            print("Key event detected:", keycode, "flags:", flags, "trigger:", LAUNCHER_TRIGGER)
+            # print("Key event detected:", keycode, "flags:", flags, "trigger:", LAUNCHER_TRIGGER)
             if (None in set(LAUNCHER_TRIGGER.values())) and handle_new_trigger:
                 print("  Received keys, establishing new shortcut..", flush=True)
                 handle_new_trigger(event, flags, keycode)

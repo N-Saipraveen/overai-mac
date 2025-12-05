@@ -3,6 +3,9 @@
 # Python libraries
 import os
 import sys
+import signal
+import json
+from pathlib import Path
 
 import objc
 from AppKit import *
@@ -42,7 +45,10 @@ from .listener import (
     load_custom_launcher_trigger,
     set_custom_launcher_trigger,
 )
+from .health_checks import LOG_DIR
 
+CONFIG_FILE = LOG_DIR / "config.json"
+DEFAULT_SERVICE = "Grok"
 
 # Add AI service endpoints
 AI_SERVICES = {
@@ -87,6 +93,49 @@ class DragArea(NSView):
 
 # The main delegate for running the overlay app.
 class AppDelegate(NSObject):
+    def load_default_service(self):
+        """Load the default service from the config file."""
+        if CONFIG_FILE.exists():
+            try:
+                with open(CONFIG_FILE, "r") as f:
+                    config = json.load(f)
+                    return config.get("default_service", DEFAULT_SERVICE)
+            except Exception as e:
+                print(f"Failed to load config: {e}")
+        return DEFAULT_SERVICE
+
+    def save_default_service(self, service_name):
+        """Save the default service to the config file."""
+        config = {}
+        if CONFIG_FILE.exists():
+            try:
+                with open(CONFIG_FILE, "r") as f:
+                    config = json.load(f)
+            except Exception:
+                pass
+        
+        config["default_service"] = service_name
+        try:
+            with open(CONFIG_FILE, "w") as f:
+                json.dump(config, f)
+            print(f"Saved default service: {service_name}")
+        except Exception as e:
+            print(f"Failed to save config: {e}")
+
+    def remove_default_service_config(self):
+        """Remove the default service configuration."""
+        if CONFIG_FILE.exists():
+            try:
+                with open(CONFIG_FILE, "r") as f:
+                    config = json.load(f)
+                if "default_service" in config:
+                    del config["default_service"]
+                with open(CONFIG_FILE, "w") as f:
+                    json.dump(config, f)
+                print("Removed default service preference")
+            except Exception as e:
+                print(f"Failed to update config: {e}")
+
     # The main application setup.
     def applicationDidFinishLaunching_(self, notification):
         # Placeholders for event tap and its run loop source
@@ -95,8 +144,18 @@ class AppDelegate(NSObject):
         # Run as accessory app
         NSApp.setActivationPolicy_(NSApplicationActivationPolicyAccessory)
         # Create a borderless, floating, resizable window
+        screen = NSScreen.mainScreen()
+        screen_rect = screen.visibleFrame()
+        full_screen_rect = screen.frame()
+        window_width = 550
+        window_height = 580
+        
+        # Center horizontally on the physical screen
+        x_pos = full_screen_rect.origin.x + (full_screen_rect.size.width - window_width) / 2
+        y_pos = screen_rect.origin.y + 20  # 20px padding from bottom/dock
+
         self.window = AppWindow.alloc().initWithContentRect_styleMask_backing_defer_(
-            NSMakeRect(500, 200, 550, 580),
+            NSMakeRect(x_pos, y_pos, window_width, window_height),
             NSBorderlessWindowMask | NSResizableWindowMask,
             NSBackingStoreBuffered,
             False
@@ -124,6 +183,8 @@ class AppDelegate(NSObject):
         # Make window transparent so that the corners can be rounded
         self.window.setOpaque_(False)
         self.window.setBackgroundColor_(NSColor.clearColor())
+        # Set slight initial transparency
+        self.window.setAlphaValue_(0.80)
         # Prevent overlay from appearing in screenshots or screen recordings
         self.window.setSharingType_(NSWindowSharingNone)
         # Set up content view with rounded corners
@@ -149,14 +210,42 @@ class AppDelegate(NSObject):
         self.ai_selector = NSPopUpButton.alloc().initWithFrame_(NSMakeRect(40, 5, 150, 20))
         for name in AI_SERVICES.keys():
             self.ai_selector.addItemWithTitle_(name)
+        
+        # Set initial selection based on saved default
+        default_service = self.load_default_service()
+        if default_service in AI_SERVICES:
+            self.ai_selector.selectItemWithTitle_(default_service)
+        else:
+            self.ai_selector.selectItemWithTitle_(DEFAULT_SERVICE)
+
         self.ai_selector.setTarget_(self)
         self.ai_selector.setAction_("aiServiceChanged:")
         self.drag_area.addSubview_(self.ai_selector)
         # Anchor selector to the left edge when drag area resizes
         self.ai_selector.setAutoresizingMask_(NSViewMaxXMargin)
 
+        # Add "Default" checkbox next to selector
+        self.default_checkbox = NSButton.alloc().initWithFrame_(NSMakeRect(200, 5, 60, 20))
+        self.default_checkbox.setButtonType_(NSSwitchButton)
+        self.default_checkbox.setTitle_("Default")
+        self.default_checkbox.setTarget_(self)
+        self.default_checkbox.setAction_("toggleDefault:")
+        self.updateDefaultCheckboxState()
+        self.drag_area.addSubview_(self.default_checkbox)
+        self.default_checkbox.setAutoresizingMask_(NSViewMaxXMargin)
+
+        # Add quit button (X) to the far right
+        quit_btn = NSButton.alloc().initWithFrame_(NSMakeRect(content_bounds.size.width - 25, 5, 20, 20))
+        quit_btn.setBordered_(False)
+        quit_btn.setImage_(NSImage.imageWithSystemSymbolName_accessibilityDescription_("xmark", None))
+        quit_btn.setTarget_(self)
+        quit_btn.setAction_("quitApp:")
+        self.drag_area.addSubview_(quit_btn)
+        # Anchor quit button to the right edge
+        quit_btn.setAutoresizingMask_(NSViewMinXMargin)
+
         # Add transparency control buttons
-        decrease_btn = NSButton.alloc().initWithFrame_(NSMakeRect(content_bounds.size.width - 60, 5, 20, 20))
+        decrease_btn = NSButton.alloc().initWithFrame_(NSMakeRect(content_bounds.size.width - 85, 5, 20, 20))
         decrease_btn.setBordered_(False)
         decrease_btn.setImage_(NSImage.imageWithSystemSymbolName_accessibilityDescription_("minus.circle.fill", None))
         decrease_btn.setTarget_(self)
@@ -165,7 +254,7 @@ class AppDelegate(NSObject):
         # Anchor decrease button to the right edge
         decrease_btn.setAutoresizingMask_(NSViewMinXMargin)
 
-        increase_btn = NSButton.alloc().initWithFrame_(NSMakeRect(content_bounds.size.width - 30, 5, 20, 20))
+        increase_btn = NSButton.alloc().initWithFrame_(NSMakeRect(content_bounds.size.width - 55, 5, 20, 20))
         increase_btn.setBordered_(False)
         increase_btn.setImage_(NSImage.imageWithSystemSymbolName_accessibilityDescription_("plus.circle.fill", None))
         increase_btn.setTarget_(self)
@@ -177,7 +266,8 @@ class AppDelegate(NSObject):
         content_view.addSubview_(self.webview)
         self.webview.setFrame_(NSMakeRect(0, 0, content_bounds.size.width, content_bounds.size.height - DRAG_AREA_HEIGHT))
         # Contat the target website.
-        url = NSURL.URLWithString_(WEBSITE)
+        selected_service = self.ai_selector.titleOfSelectedItem()
+        url = NSURL.URLWithString_(AI_SERVICES.get(selected_service, WEBSITE))
         request = NSURLRequest.requestWithURL_(url)
         self.webview.loadRequest_(request)
         # Set up script message handler for background color changes
@@ -291,6 +381,14 @@ class AppDelegate(NSObject):
             AVMediaTypeAudio,
             lambda granted: print("Microphone access granted:", granted)
         )
+
+        # Set up signal handler for Ctrl+C
+        signal.signal(signal.SIGINT, lambda sig, frame: NSApp.terminate_(None))
+        # Create a timer to wake up the run loop periodically so signals can be processed
+        NSTimer.scheduledTimerWithTimeInterval_target_selector_userInfo_repeats_(
+            0.5, self, "handleTimer:", None, True
+        )
+
         if self.eventTap:
             # Create and add the run loop source
             self.eventTapSource = CFMachPortCreateRunLoopSource(None, self.eventTap, 0)
@@ -304,6 +402,10 @@ class AppDelegate(NSObject):
         self.window.setDelegate_(self)
         # Make sure this window is shown and focused.
         self.showWindow_(None)
+
+    # Empty handler for the keep-alive timer
+    def handleTimer_(self, timer):
+        pass
 
     # Logic to show the overlay, make it the key window, and focus on the typing area.
     def showWindow_(self, sender):
@@ -452,6 +554,32 @@ class AppDelegate(NSObject):
         url = NSURL.URLWithString_(AI_SERVICES[selected_service])
         request = NSURLRequest.requestWithURL_(url)
         self.webview.loadRequest_(request)
+        self.updateDefaultCheckboxState()
+
+    def updateDefaultCheckboxState(self):
+        """Update the checkbox state based on whether the current selection matches the saved default."""
+        current_selection = self.ai_selector.titleOfSelectedItem()
+        saved_default = self.load_default_service()
+        if current_selection == saved_default:
+            self.default_checkbox.setState_(NSControlStateValueOn)
+        else:
+            self.default_checkbox.setState_(NSControlStateValueOff)
+
+    def toggleDefault_(self, sender):
+        """Handle checkbox toggle to set/unset default service."""
+        if sender.state() == NSControlStateValueOn:
+            current_selection = self.ai_selector.titleOfSelectedItem()
+            self.save_default_service(current_selection)
+        else:
+            # If unchecked, revert to hardcoded default (or remove preference)
+            self.remove_default_service_config()
+            # Re-check if the current one happens to be the hardcoded default
+            self.updateDefaultCheckboxState()
+
+    # Quit the application.
+    def quitApp_(self, sender):
+        NSApp.terminate_(sender)
+
     # Increase overlay transparency
     def increaseTransparency_(self, sender):
         current = self.window.alphaValue()
