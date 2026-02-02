@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="overai/logo/logo_white.png" width="120" alt="OverAI Logo"/>
+  <img src="overai/logo/logo.png" width="120" alt="OverAI Logo"/>
 </p>
 
 <h1 align="center">OverAI</h1>
