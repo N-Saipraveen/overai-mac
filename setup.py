@@ -82,17 +82,10 @@ setup(
             "about/*.txt",
             "logo/*.png",
             "logo/*.icns",
+            "logo/icon.iconset/*.png",
         ],
     },
-    install_requires=[
-        "pyobjc>=10.0",
-        "pyobjc-framework-Cocoa>=10.0",
-        "pyobjc-framework-Quartz>=10.0",
-        "pyobjc-framework-WebKit>=10.0",
-        "pyobjc-framework-AVFoundation>=10.0",
-        "pyobjc-framework-ApplicationServices>=10.0",
-        "psutil>=5.9.0",
-    ],
+    # install_requires removed (handled by environment for py2app)
     python_requires=">=3.9",
     entry_points={
         "console_scripts": [

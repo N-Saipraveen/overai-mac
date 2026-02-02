@@ -1,0 +1,2 @@
+[console_scripts]
+overai = overai.main:main

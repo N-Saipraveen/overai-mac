@@ -28,8 +28,10 @@ class StatusBarManager:
     
     def setup(self):
         """Setup status bar."""
+        # Use Variable length for better compatibility
+        from AppKit import NSVariableStatusItemLength
         self._status_item = NSStatusBar.systemStatusBar().statusItemWithLength_(
-            NSSquareStatusItemLength
+            NSVariableStatusItemLength
         )
         self._update_icon()
         self._create_menu()
@@ -37,14 +39,29 @@ class StatusBarManager:
         self._setup_appearance_observer()
     
     def _update_icon(self):
-        """Set 'O' as menu bar icon."""
+        """Set menu bar icon."""
         if not self._status_item:
             return
         
-        button = self._status_item.button()
-        attrs = {NSForegroundColorAttributeName: NSColor.labelColor()}
-        title = NSAttributedString.alloc().initWithString_attributes_("O", attrs)
-        button.setAttributedTitle_(title)
+        # Use system symbol 'sparkles' (AI standard) for reliability
+        # This avoids "white square" (solid icon) and "missing" (bad path) issues
+        image = NSImage.imageWithSystemSymbolName_accessibilityDescription_("sparkles", "OverAI")
+        
+        if image:
+            image.setTemplate_(True)
+            self._status_item.button().setImage_(image)
+            self._status_item.button().setTitle_("")
+            return
+        
+        # 3. Last resort: System Symbol (Always works)
+        # Use a system symbol that looks like 'O'
+        fallback = NSImage.imageWithSystemSymbolName_accessibilityDescription_("circle.circle", "OverAI")
+        if fallback:
+            self._status_item.button().setImage_(fallback)
+            self._status_item.button().setTitle_("")
+        else:
+            # Text fallback
+            self._status_item.button().setTitle_("O")
     
     def _setup_appearance_observer(self):
         """Watch for theme changes."""

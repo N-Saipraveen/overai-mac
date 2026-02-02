@@ -1,0 +1,223 @@
+Metadata-Version: 2.4
+Name: OverAI
+Version: 1.0.0
+Summary: AI Overlay for macOS
+Author: Sai Praveen
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: MacOS X :: Cocoa
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Utilities
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+<p align="center">
+  <img src="overai/logo/logo_white.png" width="120" alt="OverAI Logo"/>
+</p>
+
+<h1 align="center">OverAI</h1>
+<p align="center"><strong>The Modern AI Overlay for macOS</strong></p>
+
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#local-ai">Local AI</a> •
+  <a href="#building">Building</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/macOS-12.0%2B-blue?style=flat-square&logo=apple" />
+  <img src="https://img.shields.io/badge/Python-3.9%2B-green?style=flat-square&logo=python" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" />
+</p>
+
+---
+
+## Overview
+
+OverAI is a beautifully crafted, always-on-top overlay that gives you instant access to multiple AI assistants. Designed following Apple's Human Interface Guidelines with a focus on privacy, performance, and accessibility.
+
+**Privacy-first. Lightning fast. Accessible to everyone.**
+
+---
+
+## Features
+
+| Feature | Description |
+|---------|-------------|
+| 🎨 **Native Design** | Apple HIG-compliant with system colors, vibrancy, and dark mode |
+| 🧠 **Multi-AI** | ChatGPT, Claude, Gemini, Grok, Perplexity, DeepSeek |
+| 🏠 **Local AI** | Ollama integration with iMessage-style chat interface |
+| ⌨️ **Global Hotkey** | Toggle with ⌘+G from anywhere |
+| 💾 **Smart Memory** | Remembers your position, size, opacity, and last used AI |
+| ♿ **Accessible** | Full VoiceOver support, keyboard navigation |
+| 🪟 **Screen Recording Safe** | Hidden from screenshots and screen sharing |
+|  **Lightweight** | Optimized memory usage (~60MB idle) |
+
+---
+
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/N-Saipraveen/overai-mac.git
+cd overai-mac
+
+# Create virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run OverAI
+python -m overai
+```
+
+---
+
+## Usage
+
+### Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| `⌘ + G` | Toggle overlay |
+| `⌘ + H` | Hide overlay |
+| `⌘ + R` | Reload page |
+| `⌘ + Q` | Quit |
+
+### Command Line
+
+```bash
+# Install to run at login
+python -m overai --install-startup
+
+# Remove from login items  
+python -m overai --uninstall-startup
+
+# Check permissions
+python -m overai --check-permissions
+```
+
+---
+
+## Local AI
+
+OverAI integrates with [Ollama](https://ollama.ai) for fully private, local AI:
+
+1. Install Ollama: `brew install ollama`
+2. Pull a model: `ollama pull llama2`
+3. Start Ollama: `ollama serve`
+4. Select "Local AI" from the OverAI service menu
+
+The Local AI interface features an iMessage-style chat with blue/gray bubbles.
+
+---
+
+## Permissions
+
+OverAI requires:
+
+- **Accessibility** — For global hotkey detection
+- **Microphone** — For voice input (optional)
+
+Grant in: **System Settings → Privacy & Security**
+
+---
+
+## Architecture
+
+```
+overai/
+├── core/           # Application core
+│   ├── app_delegate.py      # Main controller
+│   ├── window_manager.py    # Window handling
+│   └── lifecycle_manager.py # App lifecycle
+├── ui/             # User interface
+│   ├── webview_manager.py   # AI service webviews
+│   ├── control_bar.py       # Control buttons
+│   └── status_bar.py        # Menu bar
+├── api/            # API integrations
+│   └── ollama_client.py     # Ollama HTTP client
+└── utils/          # Utilities
+    ├── memory_tracker.py    # Memory optimization
+    ├── accessibility.py     # VoiceOver support
+    └── keyboard.py          # Global hotkeys
+```
+
+---
+
+## Building
+
+### Development
+
+```bash
+pip install -e .
+python -m overai
+```
+
+### Standalone App
+
+```bash
+python setup.py py2app
+# Output: dist/OverAI.app
+```
+
+---
+
+## Tech Stack
+
+- **Python 3.9+** with PyObjC
+- **AppKit / WebKit** — Native macOS frameworks
+- **WKWebView** — Hardware-accelerated web rendering
+- **Ollama** — Local LLM inference
+
+---
+
+## Troubleshooting
+
+**App doesn't show?**
+```bash
+python -m overai --check-permissions
+```
+
+**Reset settings:**
+```bash
+rm -rf ~/Library/Application\ Support/OverAI
+rm -rf ~/Library/Logs/OverAI
+```
+
+---
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push and open a Pull Request
+
+---
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+<p align="center">
+  <strong>Made with ❤️ by Sai Praveen</strong>
+</p>
