@@ -3,196 +3,114 @@
 </p>
 
 <h1 align="center">OverAI</h1>
-<p align="center"><strong>The Modern AI Overlay for macOS</strong></p>
+<p align="center"><strong>The Seamless AI Bridge for macOS</strong></p>
 
 <p align="center">
   <a href="#features">Features</a> •
-  <a href="#installation">Installation</a> •
-  <a href="#usage">Usage</a> •
-  <a href="#local-ai">Local AI</a> •
-  <a href="#building">Building</a>
+  <a href="#installation">Download</a> •
+  <a href="#privacy">Privacy</a> •
+  <a href="#development">Development</a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/macOS-12.0%2B-blue?style=flat-square&logo=apple" />
-  <img src="https://img.shields.io/badge/Python-3.9%2B-green?style=flat-square&logo=python" />
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" />
+  <img src="https://img.shields.io/badge/macOS-12.0%2B-000000?style=for-the-badge&logo=apple&logoColor=white" />
+  <img src="https://img.shields.io/badge/Architecture-Universal-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" />
 </p>
 
 ---
 
-## Overview
+**OverAI** transforms your Mac into an intelligent workspace. Access ChatGPT, Claude, Gemini, or your own completely offline Local LLMs instantly with a single keystroke. 
 
-OverAI is a beautifully crafted, always-on-top overlay that gives you instant access to multiple AI assistants. Designed following Apple's Human Interface Guidelines with a focus on privacy, performance, and accessibility.
-
-**Privacy-first. Lightning fast. Accessible to everyone.**
+Floating gracefully above your workflow, it feels like a native part of macOS—appearing exactly when you need it, and disappearing when you don't.
 
 ---
 
-## Features
+## ✨ Features
 
-| Feature | Description |
-|---------|-------------|
-| 🎨 **Native Design** | Apple HIG-compliant with system colors, vibrancy, and dark mode |
-| 🧠 **Multi-AI** | ChatGPT, Claude, Gemini, Grok, Perplexity, DeepSeek |
-| 🏠 **Local AI** | Ollama integration with iMessage-style chat interface |
-| ⌨️ **Global Hotkey** | Toggle with ⌘+G from anywhere |
-| 💾 **Smart Memory** | Remembers your position, size, opacity, and last used AI |
-| ♿ **Accessible** | Full VoiceOver support, keyboard navigation |
-| 🪟 **Screen Recording Safe** | Hidden from screenshots and screen sharing |
-|  **Lightweight** | Optimized memory usage (~60MB idle) |
+### ⚡️ Instant Intelligence
+Toggle your assistant with **`Command + G`** from anywhere. Switching tabs breaks flow; OverAI keeps you in the zone.
+
+### 🧠 Model Agnostic
+Why choose? Use the best model for the task.
+- **Cloud Powerhouses**: ChatGPT, Claude, Gemini, Perplexity, DeepSeek, Grok.
+- **Local Privacy**: Native integration with [Ollama](https://ollama.ai) for completely offline AI (Llama 3, Mistral, etc.).
+
+### 🎨 Native Experience
+- **Apple Design**: Built with AppKit and SwiftUI principles. Matches your system theme perfectly.
+- **Glassmorphism**: Beautiful translucent UI that blends into your desktop.
+- **Interactive**: Swipe to adjust window transparency instantly.
+- **iMessage-Style Chat**: A familiar, clean interface for local conversations.
+
+### 🛡️ Secure & Lightweight
+- **Privacy First**: Your chats are your own. OverAI stores nothing on intermediate servers.
+- **Resource Efficient**: Uses minimal RAM (~50MB idle) and auto-sleeps to preserve battery life.
+- **Sandboxed**: No access to your private files.
 
 ---
 
-## Installation
+## 📥 Installation
+
+### Option 1: DMG Installer (Recommended)
+1. Download the latest `OverAI-Installer.dmg` from **[Releases](https://github.com/N-Saipraveen/overai-mac/releases)**.
+2. Drag **OverAI** to your **Applications** folder.
+3. Open it via Spotlight (`Cmd + Space` -> OverAI).
+
+### Option 2: Run from Source
+Perfect for developers who want to customize the code.
 
 ```bash
 # Clone the repository
 git clone https://github.com/N-Saipraveen/overai-mac.git
 cd overai-mac
 
-# Create virtual environment
+# Setup environment
 python3 -m venv .venv
 source .venv/bin/activate
-
-# Install dependencies
 pip install -r requirements.txt
 
-# Run OverAI
+# Launch
 python -m overai
 ```
 
 ---
 
-## Usage
-
-### Keyboard Shortcuts
+## ⌨️ Shortcuts
 
 | Shortcut | Action |
 |----------|--------|
-| `⌘ + G` | Toggle overlay |
-| `⌘ + H` | Hide overlay |
-| `⌘ + R` | Reload page |
-| `⌘ + Q` | Quit |
+| **⌘ + G** | Toggle Window (Global) |
+| **⌘ + H** | Hide Window |
+| **⌘ + R** | Reload Service |
+| **⌘ + ,** | Preferences |
+| **⌘ + Q** | Quit OverAI |
 
-### Command Line
+---
 
+## 🔒 Privacy
+
+OverAI is designed with a strict **Local-First** philosophy:
+
+1. **Direct Connections**: Web services (ChatGPT, etc.) are loaded directly in a secure WebView. No middleman API servers.
+2. **Local AI**: When using Ollama, data never leaves your machine. Perfect for sensitive documents or code.
+3. **No Tracking**: We do not track your usage, prompts, or personal data.
+
+---
+
+## 🛠️ Development
+
+Built with **Python 3** and **PyObjC**, leveraging native macOS frameworks (AppKit, WebKit, AVFoundation) for maximum performance without the bloat of Electron.
+
+### Building for Release
 ```bash
-# Install to run at login
-python -m overai --install-startup
-
-# Remove from login items  
-python -m overai --uninstall-startup
-
-# Check permissions
-python -m overai --check-permissions
-```
-
----
-
-## Local AI
-
-OverAI integrates with [Ollama](https://ollama.ai) for fully private, local AI:
-
-1. Install Ollama: `brew install ollama`
-2. Pull a model: `ollama pull llama2`
-3. Start Ollama: `ollama serve`
-4. Select "Local AI" from the OverAI service menu
-
-The Local AI interface features an iMessage-style chat with blue/gray bubbles.
-
----
-
-## Permissions
-
-OverAI requires:
-
-- **Accessibility** — For global hotkey detection
-- **Microphone** — For voice input (optional)
-
-Grant in: **System Settings → Privacy & Security**
-
----
-
-## Architecture
-
-```
-overai/
-├── core/           # Application core
-│   ├── app_delegate.py      # Main controller
-│   ├── window_manager.py    # Window handling
-│   └── lifecycle_manager.py # App lifecycle
-├── ui/             # User interface
-│   ├── webview_manager.py   # AI service webviews
-│   ├── control_bar.py       # Control buttons
-│   └── status_bar.py        # Menu bar
-├── api/            # API integrations
-│   └── ollama_client.py     # Ollama HTTP client
-└── utils/          # Utilities
-    ├── memory_tracker.py    # Memory optimization
-    ├── accessibility.py     # VoiceOver support
-    └── keyboard.py          # Global hotkeys
-```
-
----
-
-## Building
-
-### Development
-
-```bash
-pip install -e .
-python -m overai
-```
-
-### Standalone App
-
-```bash
+# Generate standalone .app and .dmg
 python setup.py py2app
-# Output: dist/OverAI.app
+./create_dmg.sh
 ```
-
----
-
-## Tech Stack
-
-- **Python 3.9+** with PyObjC
-- **AppKit / WebKit** — Native macOS frameworks
-- **WKWebView** — Hardware-accelerated web rendering
-- **Ollama** — Local LLM inference
-
----
-
-## Troubleshooting
-
-**App doesn't show?**
-```bash
-python -m overai --check-permissions
-```
-
-**Reset settings:**
-```bash
-rm -rf ~/Library/Application\ Support/OverAI
-rm -rf ~/Library/Logs/OverAI
-```
-
----
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push and open a Pull Request
-
----
-
-## License
-
-MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
 <p align="center">
-  <strong>Made with ❤️ by Sai Praveen</strong>
+  <strong>Open Source. MIT License.</strong><br>
+  Made with ❤️ by Sai Praveen
 </p>
