@@ -15,6 +15,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/macOS-12.0%2B-000000?style=for-the-badge&logo=apple&logoColor=white" />
   <img src="https://img.shields.io/badge/Architecture-Universal-blue?style=for-the-badge" />
+  <a href="https://github.com/N-Saipraveen/overai-mac/releases/download/v2.0.0/OverAI-Installer.dmg"><img src="https://img.shields.io/badge/Download-OverAI_v2.0-success?style=for-the-badge&logo=apple" /></a>
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" />
 </p>
 
@@ -52,7 +53,7 @@ Why choose? Use the best model for the task.
 ## 📥 Installation
 
 ### Option 1: DMG Installer (Recommended)
-1. Download the latest `OverAI-Installer.dmg` from **[Releases](https://github.com/N-Saipraveen/overai-mac/releases)**.
+1. **[Download OverAI-Installer.dmg](https://github.com/N-Saipraveen/overai-mac/releases/download/v2.0.0/OverAI-Installer.dmg)** (v2.0.0)
 2. Drag **OverAI** to your **Applications** folder.
 3. Open it via Spotlight (`Cmd + Space` -> OverAI).
 
