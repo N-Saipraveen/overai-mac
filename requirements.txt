@@ -1,0 +1,14 @@
+# Core dependencies for OverAI
+pyobjc>=10.0
+pyobjc-framework-Cocoa>=10.0
+pyobjc-framework-Quartz>=10.0
+pyobjc-framework-WebKit>=10.0
+pyobjc-framework-AVFoundation>=10.0
+pyobjc-framework-ApplicationServices>=10.0
+
+# System utilities
+psutil>=5.9.0
+setuptools>=68.0
+
+# Build tools (macOS only)
+py2app>=0.28; platform_system == "Darwin"

@@ -1,0 +1,5 @@
+
+
+OverAI is a sleek, always-on-top macOS overlay that brings powerful AI chat services directly to your desktop. 
+Seamlessly switch between Grok, ChatGPT, DeepSeek, or any custom endpoint with the built-in selector, and interact via text or voice thanks to integrated microphone support. 
+Adjust the transparency, hide or show with ⌘+G, and enjoy a frameless window designed to blend into your workflow—over any app, at any time. OverAI handles all permissions automatically, giving you a polished, ready-to-use AI companion in seconds.
