@@ -1,28 +1,50 @@
-# 🧠 OverAI — Modern AI Overlay for macOS
+<p align="center">
+  <img src="overai/logo/logo_white.png" width="120" alt="OverAI Logo"/>
+</p>
 
-**OverAI** is a beautifully designed, always-on-top AI overlay for macOS that gives you instant access to your favorite LLMs. Built with Apple Design principles and optimized for performance.
+<h1 align="center">OverAI</h1>
+<p align="center"><strong>The Modern AI Overlay for macOS</strong></p>
 
-> **Privacy-first. Lightning fast. Accessible to everyone.**
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#local-ai">Local AI</a> •
+  <a href="#building">Building</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/macOS-12.0%2B-blue?style=flat-square&logo=apple" />
+  <img src="https://img.shields.io/badge/Python-3.9%2B-green?style=flat-square&logo=python" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" />
+</p>
 
 ---
 
-## ✨ Features
+## Overview
+
+OverAI is a beautifully crafted, always-on-top overlay that gives you instant access to multiple AI assistants. Designed following Apple's Human Interface Guidelines with a focus on privacy, performance, and accessibility.
+
+**Privacy-first. Lightning fast. Accessible to everyone.**
+
+---
+
+## Features
 
 | Feature | Description |
 |---------|-------------|
-| 🎨 **Native Design** | Follows Apple's Human Interface Guidelines with system colors and vibrancy |
-| ⌨️ **Global Hotkey** | Toggle with ⌘+G (customizable) from anywhere |
-| 🧠 **Multi-AI Support** | Grok, ChatGPT, Claude, Gemini, DeepSeek |
-| ♿ **Accessible** | Full VoiceOver support, keyboard navigation, reduced motion |
-| 🪟 **Invisible to Recordings** | Hidden from screenshots and screen sharing |
-| 🎛️ **Transparency Control** | Adjustable opacity to blend with your workflow |
-| 💾 **State Restoration** | Remembers your position, size, and preferred AI |
-| 🚀 **Lightweight** | Optimized memory usage with lazy loading |
-| 🔒 **Privacy-First** | No external servers, local-only operation |
+| 🎨 **Native Design** | Apple HIG-compliant with system colors, vibrancy, and dark mode |
+| 🧠 **Multi-AI** | ChatGPT, Claude, Gemini, Grok, Perplexity, DeepSeek |
+| 🏠 **Local AI** | Ollama integration with iMessage-style chat interface |
+| ⌨️ **Global Hotkey** | Toggle with ⌘+G from anywhere |
+| 💾 **Smart Memory** | Remembers your position, size, opacity, and last used AI |
+| ♿ **Accessible** | Full VoiceOver support, keyboard navigation |
+| 🪟 **Screen Recording Safe** | Hidden from screenshots and screen sharing |
+|  **Lightweight** | Optimized memory usage (~60MB idle) |
 
 ---
 
-## 🚀 Quick Start
+## Installation
 
 ```bash
 # Clone the repository
@@ -34,180 +56,140 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 # Install dependencies
-pip install --upgrade pip
 pip install -r requirements.txt
 
 # Run OverAI
-python OverAI.py
-```
-
----
-
-## 🛠 Advanced Usage
-
-### Command Line Options
-
-```bash
-# Install to run at login
-overai --install-startup
-
-# Remove from login items
-overai --uninstall-startup
-
-# Check permissions
-overai --check-permissions
-
-# Show version
-overai --version
-```
-
-### Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| ⌘+G | Toggle overlay visibility |
-| ⌘+H | Hide overlay |
-| ⌘+Q | Quit application |
-| ⌘+R | Reload current page |
-| ⌘+Shift+G | Go to home |
-
----
-
-## 🔐 Permissions
-
-OverAI requires the following permissions:
-
-- **Accessibility** — For global hotkey detection
-- **Microphone** — For voice input to AI services
-
-Grant these in: **System Settings → Privacy & Security**
-
----
-
-## 🏗 Architecture
-
-OverAI 2.0 features a complete architectural overhaul:
-
-```
-overai/
-├── core/              # Application core
-│   ├── app_delegate.py      # Main controller
-│   ├── window_manager.py    # Optimized window handling
-│   └── lifecycle_manager.py # App lifecycle & memory
-├── ui/                # User interface
-│   ├── webview_manager.py   # WKWebView with lazy loading
-│   ├── control_bar.py       # Accessible controls
-│   └── status_bar.py        # Menu bar integration
-├── utils/             # Utilities
-│   ├── logger.py            # Unified logging
-│   ├── theme.py             # Dynamic theming
-│   ├── accessibility.py     # VoiceOver & keyboard nav
-│   ├── keyboard.py          # Global hotkey management
-│   └── memory_tracker.py    # Memory optimization
-└── _legacy/           # Previous version (reference)
-```
-
-### Key Improvements
-
-- **Memory Efficiency**: Weak references, lazy loading, periodic cleanup
-- **Accessibility**: Full VoiceOver support, keyboard navigation, announcements
-- **Apple Design**: System colors, vibrancy, proper dark mode adaptation
-- **State Restoration**: Saves window position, size, opacity, and AI preference
-- **Crash Protection**: Smart crash loop detection with automatic recovery
-
----
-
-## 💻 Tech Stack
-
-- **Python 3.9+**
-- **PyObjC 10.0+** — macOS framework bindings
-- **AppKit/Quartz/WebKit** — Native macOS UI
-- **psutil** — System monitoring
-
----
-
-## 🏭 Building
-
-### Standalone App
-
-```bash
-# Build .app bundle
-python setup.py py2app
-
-# The app will be in dist/OverAI.app
-```
-
-### Development Mode
-
-```bash
-# Install in editable mode
-pip install -e .
-
-# Run with module syntax
 python -m overai
 ```
 
 ---
 
-## 🐛 Troubleshooting
+## Usage
 
-### App doesn't show up
+### Keyboard Shortcuts
 
-Check Accessibility permissions:
+| Shortcut | Action |
+|----------|--------|
+| `⌘ + G` | Toggle overlay |
+| `⌘ + H` | Hide overlay |
+| `⌘ + R` | Reload page |
+| `⌘ + Q` | Quit |
+
+### Command Line
+
 ```bash
-overai --check-permissions
+# Install to run at login
+python -m overai --install-startup
+
+# Remove from login items  
+python -m overai --uninstall-startup
+
+# Check permissions
+python -m overai --check-permissions
 ```
 
-### Reset all settings
+---
 
+## Local AI
+
+OverAI integrates with [Ollama](https://ollama.ai) for fully private, local AI:
+
+1. Install Ollama: `brew install ollama`
+2. Pull a model: `ollama pull llama2`
+3. Start Ollama: `ollama serve`
+4. Select "Local AI" from the OverAI service menu
+
+The Local AI interface features an iMessage-style chat with blue/gray bubbles.
+
+---
+
+## Permissions
+
+OverAI requires:
+
+- **Accessibility** — For global hotkey detection
+- **Microphone** — For voice input (optional)
+
+Grant in: **System Settings → Privacy & Security**
+
+---
+
+## Architecture
+
+```
+overai/
+├── core/           # Application core
+│   ├── app_delegate.py      # Main controller
+│   ├── window_manager.py    # Window handling
+│   └── lifecycle_manager.py # App lifecycle
+├── ui/             # User interface
+│   ├── webview_manager.py   # AI service webviews
+│   ├── control_bar.py       # Control buttons
+│   └── status_bar.py        # Menu bar
+├── api/            # API integrations
+│   └── ollama_client.py     # Ollama HTTP client
+└── utils/          # Utilities
+    ├── memory_tracker.py    # Memory optimization
+    ├── accessibility.py     # VoiceOver support
+    └── keyboard.py          # Global hotkeys
+```
+
+---
+
+## Building
+
+### Development
+
+```bash
+pip install -e .
+python -m overai
+```
+
+### Standalone App
+
+```bash
+python setup.py py2app
+# Output: dist/OverAI.app
+```
+
+---
+
+## Tech Stack
+
+- **Python 3.9+** with PyObjC
+- **AppKit / WebKit** — Native macOS frameworks
+- **WKWebView** — Hardware-accelerated web rendering
+- **Ollama** — Local LLM inference
+
+---
+
+## Troubleshooting
+
+**App doesn't show?**
+```bash
+python -m overai --check-permissions
+```
+
+**Reset settings:**
 ```bash
 rm -rf ~/Library/Application\ Support/OverAI
 rm -rf ~/Library/Logs/OverAI
 ```
 
-### Crash loop detected
-
-```bash
-rm ~/Library/Logs/OverAI/crash_history.json
-```
-
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome!
+## Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-Please ensure your code follows:
-- PEP 8 style guidelines
-- Type hints for public APIs
-- Accessibility best practices
-- Memory-efficient patterns
+2. Create a feature branch
+3. Commit your changes
+4. Push and open a Pull Request
 
 ---
 
-## 📜 License
+## License
 
 MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-## ⭐ Support
-
-If this project helped you, **please star the repo** — it really helps!
-
----
-
-## 🙏 Acknowledgments
-
-- Apple's [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
-- [PyObjC](https://pyobjc.readthedocs.io/) team for excellent macOS bindings
-- The AI services for providing amazing APIs
 
 ---
 
