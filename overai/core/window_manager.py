@@ -235,7 +235,7 @@ class WindowManager(NSObject):
         self._content_view = container
         
         # Add visual effect as background
-        container.addSubview_positioned_relativeTo_(visual_effect, 0, None)
+        container.addSubview_positioned_relativeTo_(visual_effect, -1, None)
         self._visual_effect = visual_effect
         
         # Setup drag area on top
