@@ -12,7 +12,6 @@ xcuserdata/
 
 # Local validation output and machine metadata
 Validation/
-native/
 .DS_Store
 *.log
 __pycache__/
