@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = "1";
+	classes = {
+
+	};
+	objectVersion = "56";
+	objects = {
+		FAA1F2966D6055594206CF85 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "AppDelegate.swift";
+			sourceTree = "<group>";
+		};
+		FD005CE3A4FE2D89648A6F50 = {
+			isa = "PBXBuildFile";
+			fileRef = "FAA1F2966D6055594206CF85";
+		};
+		AED1B75FB69A1C7E02E8DD41 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "AppSettings.swift";
+			sourceTree = "<group>";
+		};
+		5BEDED7C740620915CFCC741 = {
+			isa = "PBXBuildFile";
+			fileRef = "AED1B75FB69A1C7E02E8DD41";
+		};
+		647DBA770B04A8063E68DAF4 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "BrowserSession.swift";
+			sourceTree = "<group>";
+		};
+		8919426C539B0C9F0AF250D4 = {
+			isa = "PBXBuildFile";
+			fileRef = "647DBA770B04A8063E68DAF4";
+		};
+		7D3A87CB00AE60AADD04AEC3 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "CaptureProtection.swift";
+			sourceTree = "<group>";
+		};
+		2A22D96764ABB1D91EAE6787 = {
+			isa = "PBXBuildFile";
+			fileRef = "7D3A87CB00AE60AADD04AEC3";
+		};
+		54275BE3BD9858FC14EBC2C9 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "Diagnostics.swift";
+			sourceTree = "<group>";
+		};
+		7F8DB6BCC849AB7C28B75636 = {
+			isa = "PBXBuildFile";
+			fileRef = "54275BE3BD9858FC14EBC2C9";
+		};
+		2D9EE7C149037B54A99D69B6 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "FileDropView.swift";
+			sourceTree = "<group>";
+		};
+		B65D90260F4A0D8D1F4A9803 = {
+			isa = "PBXBuildFile";
+			fileRef = "2D9EE7C149037B54A99D69B6";
+		};
+		501470545701674E9FC896F5 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "HotkeyController.swift";
+			sourceTree = "<group>";
+		};
+		3DC19C4EDD10E2FCC4EC3BC3 = {
+			isa = "PBXBuildFile";
+			fileRef = "501470545701674E9FC896F5";
+		};
+		D1BCF5996466C28881B3B345 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "OverlayController.swift";
+			sourceTree = "<group>";
+		};
+		08B238356DC463A40BBE0925 = {
+			isa = "PBXBuildFile";
+			fileRef = "D1BCF5996466C28881B3B345";
+		};
+		7A80B0C169C41457204B5882 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "PermissionsController.swift";
+			sourceTree = "<group>";
+		};
+		358C5412BABC4F8409162B87 = {
+			isa = "PBXBuildFile";
+			fileRef = "7A80B0C169C41457204B5882";
+		};
+		D590009EBC609EC04DC451AA = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "ProviderArtwork.swift";
+			sourceTree = "<group>";
+		};
+		C428392452851D32756F5BD4 = {
+			isa = "PBXBuildFile";
+			fileRef = "D590009EBC609EC04DC451AA";
+		};
+		CC0ED1B0B8695E9CF2AF1F62 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "SelfTestRunner.swift";
+			sourceTree = "<group>";
+		};
+		C0601F09824E52C483DFC080 = {
+			isa = "PBXBuildFile";
+			fileRef = "CC0ED1B0B8695E9CF2AF1F62";
+		};
+		0A91433B52C564FD4561F563 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "SettingsController.swift";
+			sourceTree = "<group>";
+		};
+		519D0FEC4431DDF9D251698B = {
+			isa = "PBXBuildFile";
+			fileRef = "0A91433B52C564FD4561F563";
+		};
+		694D44870FFBB1E3F9845801 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "StartupController.swift";
+			sourceTree = "<group>";
+		};
+		7577DD0E295AE598EF902689 = {
+			isa = "PBXBuildFile";
+			fileRef = "694D44870FFBB1E3F9845801";
+		};
+		35F3DA0B36C589839197A1BB = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "UploadLab.swift";
+			sourceTree = "<group>";
+		};
+		794C6354B4618B5E44C56132 = {
+			isa = "PBXBuildFile";
+			fileRef = "35F3DA0B36C589839197A1BB";
+		};
+		C4D41200F77674AA50C360AC = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "main.swift";
+			sourceTree = "<group>";
+		};
+		A4F9ED9D5106A4B5FB6971B4 = {
+			isa = "PBXBuildFile";
+			fileRef = "C4D41200F77674AA50C360AC";
+		};
+		878A52FC5FF6A57D50B7B870 = {
+			isa = "PBXGroup";
+			children = (
+				"FAA1F2966D6055594206CF85",
+				"AED1B75FB69A1C7E02E8DD41",
+				"647DBA770B04A8063E68DAF4",
+				"7D3A87CB00AE60AADD04AEC3",
+				"54275BE3BD9858FC14EBC2C9",
+				"2D9EE7C149037B54A99D69B6",
+				"501470545701674E9FC896F5",
+				"D1BCF5996466C28881B3B345",
+				"7A80B0C169C41457204B5882",
+				"D590009EBC609EC04DC451AA",
+				"CC0ED1B0B8695E9CF2AF1F62",
+				"0A91433B52C564FD4561F563",
+				"694D44870FFBB1E3F9845801",
+				"35F3DA0B36C589839197A1BB",
+				"C4D41200F77674AA50C360AC",
+			);
+			path = "Sources/OverAI";
+			sourceTree = "<group>";
+		};
+		9CEEC13202AFBF12EE3ABB99 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.xml";
+			path = "Info.plist";
+			sourceTree = "<group>";
+		};
+		7367AB9A454559025D4D8EE2 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text";
+			path = "Sources/OverAI/Resources/ThirdPartyNotices.txt";
+			sourceTree = "<group>";
+		};
+		C2D4B446A44CE54FAB8E0115 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "image.icns";
+			path = "Sources/OverAI/Resources/icon.icns";
+			sourceTree = "<group>";
+		};
+		B75B7592BA55F183606B09B6 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "folder";
+			path = "Sources/OverAI/Resources/ProviderIcons";
+			sourceTree = "<group>";
+		};
+		C28034ADE08DACD30DA91BA1 = {
+			isa = "PBXBuildFile";
+			fileRef = "B75B7592BA55F183606B09B6";
+		};
+		AF261672CBD54CB344D3E73E = {
+			isa = "PBXBuildFile";
+			fileRef = "7367AB9A454559025D4D8EE2";
+		};
+		AEA316E3B05950E8F1EF6B39 = {
+			isa = "PBXBuildFile";
+			fileRef = "C2D4B446A44CE54FAB8E0115";
+		};
+		A8792157CB4F27FB949C035F = {
+			isa = "PBXFileReference";
+			explicitFileType = "wrapper.application";
+			includeInIndex = "0";
+			path = "OverAI.app";
+			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		0A3E27B8CA818264D75C8D81 = {
+			isa = "PBXGroup";
+			children = (
+				"A8792157CB4F27FB949C035F",
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		0D6E4079E36703EBD37C0072 = {
+			isa = "PBXGroup";
+			children = (
+				"878A52FC5FF6A57D50B7B870",
+				"9CEEC13202AFBF12EE3ABB99",
+				"7367AB9A454559025D4D8EE2",
+				"C2D4B446A44CE54FAB8E0115",
+				"B75B7592BA55F183606B09B6",
+				"0A3E27B8CA818264D75C8D81",
+			);
+			sourceTree = "<group>";
+		};
+		573C86FB04EFBA194470AC51 = {
+			isa = "XCRemoteSwiftPackageReference";
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = "exactVersion";
+				version = "3.1.0";
+			};
+		};
+		085827B649F7606E862BCEEB = {
+			isa = "XCLocalSwiftPackageReference";
+			relativePath = ".";
+		};
+		CEBEF0D9A1863C20D9A80834 = {
+			isa = "XCSwiftPackageProductDependency";
+			package = "573C86FB04EFBA194470AC51";
+			productName = "KeyboardShortcuts";
+		};
+		F5AE27228AC34400DE4A3768 = {
+			isa = "XCSwiftPackageProductDependency";
+			productName = "OverAICore";
+			package = "085827B649F7606E862BCEEB";
+		};
+		23C97E063E5F663168D93535 = {
+			isa = "PBXBuildFile";
+			productRef = "CEBEF0D9A1863C20D9A80834";
+		};
+		FB839ECA3F3526248F31E8F8 = {
+			isa = "PBXBuildFile";
+			productRef = "F5AE27228AC34400DE4A3768";
+		};
+		D626F04DF571B9BB2451CBFE = {
+			isa = "PBXSourcesBuildPhase";
+			buildActionMask = "2147483647";
+			files = (
+				"FD005CE3A4FE2D89648A6F50",
+				"5BEDED7C740620915CFCC741",
+				"8919426C539B0C9F0AF250D4",
+				"2A22D96764ABB1D91EAE6787",
+				"7F8DB6BCC849AB7C28B75636",
+				"B65D90260F4A0D8D1F4A9803",
+				"3DC19C4EDD10E2FCC4EC3BC3",
+				"08B238356DC463A40BBE0925",
+				"358C5412BABC4F8409162B87",
+				"C428392452851D32756F5BD4",
+				"C0601F09824E52C483DFC080",
+				"519D0FEC4431DDF9D251698B",
+				"7577DD0E295AE598EF902689",
+				"794C6354B4618B5E44C56132",
+				"A4F9ED9D5106A4B5FB6971B4",
+			);
+			runOnlyForDeploymentPostprocessing = "0";
+		};
+		951DDECB505D289B8BC956E6 = {
+			isa = "PBXFrameworksBuildPhase";
+			buildActionMask = "2147483647";
+			files = (
+				"23C97E063E5F663168D93535",
+				"FB839ECA3F3526248F31E8F8",
+			);
+			runOnlyForDeploymentPostprocessing = "0";
+		};
+		5C2473E515024614E403B8B9 = {
+			isa = "PBXResourcesBuildPhase";
+			buildActionMask = "2147483647";
+			files = (
+				"AF261672CBD54CB344D3E73E",
+				"AEA316E3B05950E8F1EF6B39",
+				"C28034ADE08DACD30DA91BA1",
+			);
+			runOnlyForDeploymentPostprocessing = "0";
+		};
+		488864B3D19480A82F7F1786 = {
+			isa = "XCBuildConfiguration";
+			name = "Debug";
+			buildSettings = {
+				SDKROOT = "macosx";
+				MACOSX_DEPLOYMENT_TARGET = "14.0";
+				ARCHS = "arm64";
+				SWIFT_VERSION = "5.0";
+				CLANG_ENABLE_MODULES = "YES";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				DEBUG_INFORMATION_FORMAT = "dwarf";
+			};
+		};
+		2A04C20BF6D5C20A63A1D4CC = {
+			isa = "XCBuildConfiguration";
+			name = "Debug";
+			buildSettings = {
+				PRODUCT_NAME = "OverAI";
+				PRODUCT_MODULE_NAME = "OverAIApp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overai.native";
+				INFOPLIST_FILE = "Info.plist";
+				GENERATE_INFOPLIST_FILE = "NO";
+				MARKETING_VERSION = "3.0.0";
+				CURRENT_PROJECT_VERSION = "3004";
+				CODE_SIGN_STYLE = "Manual";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_ENTITLEMENTS = "OverAI.entitlements";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = "YES";
+				ENABLE_HARDENED_RUNTIME = "YES";
+				ENABLE_APP_SANDBOX = "NO";
+				COMBINE_HIDPI_IMAGES = "YES";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+			};
+		};
+		35B1014F135DE9B45529B733 = {
+			isa = "XCBuildConfiguration";
+			name = "Release";
+			buildSettings = {
+				SDKROOT = "macosx";
+				MACOSX_DEPLOYMENT_TARGET = "14.0";
+				ARCHS = "arm64";
+				SWIFT_VERSION = "5.0";
+				CLANG_ENABLE_MODULES = "YES";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+			};
+		};
+		E28089EB494F94D6F9770EC2 = {
+			isa = "XCBuildConfiguration";
+			name = "Release";
+			buildSettings = {
+				PRODUCT_NAME = "OverAI";
+				PRODUCT_MODULE_NAME = "OverAIApp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overai.native";
+				INFOPLIST_FILE = "Info.plist";
+				GENERATE_INFOPLIST_FILE = "NO";
+				MARKETING_VERSION = "3.0.0";
+				CURRENT_PROJECT_VERSION = "3004";
+				CODE_SIGN_STYLE = "Manual";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_ENTITLEMENTS = "OverAI.entitlements";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = "NO";
+				ENABLE_HARDENED_RUNTIME = "YES";
+				ENABLE_APP_SANDBOX = "NO";
+				COMBINE_HIDPI_IMAGES = "YES";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+			};
+		};
+		B4E10CAA9C5E22150B71559C = {
+			isa = "XCConfigurationList";
+			buildConfigurations = (
+				"488864B3D19480A82F7F1786",
+				"35B1014F135DE9B45529B733",
+			);
+			defaultConfigurationIsVisible = "0";
+			defaultConfigurationName = "Release";
+		};
+		7BCEE9A04133D8A2FED7D4D3 = {
+			isa = "XCConfigurationList";
+			buildConfigurations = (
+				"2A04C20BF6D5C20A63A1D4CC",
+				"E28089EB494F94D6F9770EC2",
+			);
+			defaultConfigurationIsVisible = "0";
+			defaultConfigurationName = "Release";
+		};
+		A172CEDCAE47474B615C54D5 = {
+			isa = "PBXNativeTarget";
+			name = "OverAI";
+			productName = "OverAI";
+			productReference = "A8792157CB4F27FB949C035F";
+			productType = "com.apple.product-type.application";
+			buildConfigurationList = "7BCEE9A04133D8A2FED7D4D3";
+			buildPhases = (
+				"D626F04DF571B9BB2451CBFE",
+				"951DDECB505D289B8BC956E6",
+				"5C2473E515024614E403B8B9",
+			);
+			buildRules = (
+
+			);
+			dependencies = (
+
+			);
+			packageProductDependencies = (
+				"CEBEF0D9A1863C20D9A80834",
+				"F5AE27228AC34400DE4A3768",
+			);
+		};
+		244210E48437B6556980A702 = {
+			isa = "PBXProject";
+			attributes = {
+				LastUpgradeCheck = "2630";
+			};
+			buildConfigurationList = "B4E10CAA9C5E22150B71559C";
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = "en";
+			hasScannedForEncodings = "0";
+			knownRegions = (
+				"en",
+				"Base",
+			);
+			mainGroup = "0D6E4079E36703EBD37C0072";
+			productRefGroup = "0A3E27B8CA818264D75C8D81";
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"A172CEDCAE47474B615C54D5",
+			);
+			packageReferences = (
+				"573C86FB04EFBA194470AC51",
+				"085827B649F7606E862BCEEB",
+			);
+		};
+	};
+	rootObject = "244210E48437B6556980A702";
+}

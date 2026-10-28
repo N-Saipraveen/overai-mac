@@ -1,0 +1,44 @@
+[
+  {
+    "provider": "chatgpt",
+    "source": "https://cdn.oaistatic.com/assets/favicon-eex17e9e.ico",
+    "retrieved": "2026-10-15",
+    "sha256": "b05515c609d59bf8b6d74df5cd28077572d29b31f9b4fbabcb251946207c575b",
+    "processing": "Converted to PNG; maximum dimension 64px; original artwork unchanged."
+  },
+  {
+    "provider": "claude",
+    "source": "https://claude.ai/favicon.ico",
+    "retrieved": "2026-10-15",
+    "sha256": "239c79fd5a7e007e3f9297eacfa7fd708a5bdef2c67dd11273472b93f5a00d68",
+    "processing": "Converted to PNG; maximum dimension 64px; original artwork unchanged."
+  },
+  {
+    "provider": "gemini",
+    "source": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+    "retrieved": "2026-10-15",
+    "sha256": "3c90722c85d1c3fbc8bed7d4db44530b77314e7de1fb755b8a58cb45df79df52",
+    "processing": "Converted to PNG; maximum dimension 64px; original artwork unchanged."
+  },
+  {
+    "provider": "grok",
+    "source": "https://grok.com/images/android-chrome-192x192.png",
+    "retrieved": "2026-10-15",
+    "sha256": "152b859116ed07b74969b21a7416c66e974e8ae1083cb5473ad03bdd86cca529",
+    "processing": "Converted to PNG; maximum dimension 64px; original artwork unchanged."
+  },
+  {
+    "provider": "arena",
+    "source": "https://arena.ai/apple-touch-icon.png",
+    "retrieved": "2026-10-15",
+    "sha256": "457d3803f58414c3faa615a6209337ba149b52d904b3e48755611be3e0b8c582",
+    "processing": "Converted to PNG; maximum dimension 64px; original artwork unchanged."
+  },
+  {
+    "provider": "muse",
+    "source": "https://muse.ai/favicon.ico",
+    "retrieved": "2026-10-15",
+    "sha256": "b02d69d2bbcd534dce8a01f41c6d44a5957ba8d68f28c871bee82070e32db233",
+    "processing": "Converted to PNG; maximum dimension 64px; original artwork unchanged."
+  }
+]
