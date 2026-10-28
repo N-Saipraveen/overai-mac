@@ -364,4 +364,3 @@ private struct SettingsView: View {
         refreshedAt = Date()
     }
 }
-

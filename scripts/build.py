@@ -1,7 +1,7 @@
 """Build/test local artifacts or sign, notarize and verify a distribution release.
 
-Local: python3 native/scripts/build.py --test --dmg
-Release: OVERAI_SIGNING_IDENTITY='Developer ID Application: ...' python3 native/scripts/build.py --release --notary-profile PROFILE
+Local: python3 scripts/build.py --test --dmg
+Release: OVERAI_SIGNING_IDENTITY='Developer ID Application: ...' python3 scripts/build.py --release --notary-profile PROFILE
 Notary credentials remain in an existing macOS Keychain profile.
 """
 import argparse
@@ -15,7 +15,6 @@ import subprocess
 import tempfile
 import uuid
 import re
-from urllib.parse import urlsplit, parse_qsl
 from datetime import datetime, timezone
 
 parser = argparse.ArgumentParser()
@@ -25,9 +24,8 @@ parser.add_argument("--preview", action="store_true", help="Package an explicitl
 parser.add_argument("--release", action="store_true", help="Require Developer ID, tests, notarization and Gatekeeper validation")
 parser.add_argument("--notary-profile", help="Existing notarytool Keychain profile; no passwords on the command line")
 args = parser.parse_args()
-native = Path(__file__).resolve().parents[1]
-repo = native.parent
-release = json.loads((native / "Release.json").read_text())
+repo = Path(__file__).resolve().parents[1]
+release = json.loads((repo / "Release.json").read_text())
 output = repo / "dist"
 identity = os.environ.get("OVERAI_SIGNING_IDENTITY", "-")
 if args.release and args.preview:
@@ -47,7 +45,7 @@ if args.release:
 elif args.notary_profile:
     parser.error("Use --notary-profile only with --release.")
 output.mkdir(exist_ok=True)
-validation = native / "Validation"
+validation = repo / "Validation"
 validation.mkdir(exist_ok=True)
 
 
@@ -81,15 +79,15 @@ def verify(app):
 
 
 def build(with_validation=False):
-    command = ["xcodebuild", "-project", native / "OverAI.xcodeproj", "-scheme", "OverAI", "-configuration", "Release",
-               "-derivedDataPath", native / ".deriveddata", "-destination", "platform=macOS,arch=arm64",
+    command = ["xcodebuild", "-project", repo / "OverAI.xcodeproj", "-scheme", "OverAI", "-configuration", "Release",
+               "-derivedDataPath", repo / ".deriveddata", "-destination", "platform=macOS,arch=arm64",
                "CODE_SIGN_IDENTITY=" + identity,
                "SWIFT_ACTIVE_COMPILATION_CONDITIONS=" + ("OVERAI_VALIDATION" if with_validation else ""),
                "build", "-quiet"]
     if identity.startswith("Developer ID Application:"):
         command.insert(-2, "OTHER_CODE_SIGN_FLAGS=--timestamp")
     run(*command)
-    product = native / ".deriveddata/Build/Products/Release/OverAI.app"
+    product = repo / ".deriveddata/Build/Products/Release/OverAI.app"
     verify(product)
     return product
 
@@ -104,11 +102,11 @@ def notarize(path, label):
         raise RuntimeError("Apple notarization did not accept " + label + "; see Validation/notarization-" + label + ".json")
 
 
-run("python3", native / "scripts/generate-project.py")
+run("python3", repo / "scripts/generate-project.py")
 checks = {}
 if args.test:
     product = build(with_validation=True)
-    unit_run = subprocess.run(["swift", "test", "--package-path", str(native)],
+    unit_run = subprocess.run(["swift", "test", "--package-path", str(repo)],
                               check=True, cwd=repo, timeout=600, capture_output=True, text=True)
     print(unit_run.stdout, end="")
     print(unit_run.stderr, end="")

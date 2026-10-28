@@ -106,16 +106,6 @@
 			isa = "PBXBuildFile";
 			fileRef = "D590009EBC609EC04DC451AA";
 		};
-		CC0ED1B0B8695E9CF2AF1F62 = {
-			isa = "PBXFileReference";
-			lastKnownFileType = "sourcecode.swift";
-			path = "SelfTestRunner.swift";
-			sourceTree = "<group>";
-		};
-		C0601F09824E52C483DFC080 = {
-			isa = "PBXBuildFile";
-			fileRef = "CC0ED1B0B8695E9CF2AF1F62";
-		};
 		0A91433B52C564FD4561F563 = {
 			isa = "PBXFileReference";
 			lastKnownFileType = "sourcecode.swift";
@@ -135,16 +125,6 @@
 		7577DD0E295AE598EF902689 = {
 			isa = "PBXBuildFile";
 			fileRef = "694D44870FFBB1E3F9845801";
-		};
-		35F3DA0B36C589839197A1BB = {
-			isa = "PBXFileReference";
-			lastKnownFileType = "sourcecode.swift";
-			path = "UploadLab.swift";
-			sourceTree = "<group>";
-		};
-		794C6354B4618B5E44C56132 = {
-			isa = "PBXBuildFile";
-			fileRef = "35F3DA0B36C589839197A1BB";
 		};
 		C4D41200F77674AA50C360AC = {
 			isa = "PBXFileReference";
@@ -169,13 +149,40 @@
 				"D1BCF5996466C28881B3B345",
 				"7A80B0C169C41457204B5882",
 				"D590009EBC609EC04DC451AA",
-				"CC0ED1B0B8695E9CF2AF1F62",
 				"0A91433B52C564FD4561F563",
 				"694D44870FFBB1E3F9845801",
-				"35F3DA0B36C589839197A1BB",
 				"C4D41200F77674AA50C360AC",
 			);
 			path = "Sources/OverAI";
+			sourceTree = "<group>";
+		};
+		6A13CE924A1749AA5F964FF2 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "SelfTestRunner.swift";
+			sourceTree = "<group>";
+		};
+		6ABD95198D6149FD645F577C = {
+			isa = "PBXBuildFile";
+			fileRef = "6A13CE924A1749AA5F964FF2";
+		};
+		421B5053F7EF5B0761B4BBE0 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "UploadLab.swift";
+			sourceTree = "<group>";
+		};
+		FB47A71E388A3CA9D793FE6E = {
+			isa = "PBXBuildFile";
+			fileRef = "421B5053F7EF5B0761B4BBE0";
+		};
+		0347EAE7C199A8C101C7F934 = {
+			isa = "PBXGroup";
+			children = (
+				"6A13CE924A1749AA5F964FF2",
+				"421B5053F7EF5B0761B4BBE0",
+			);
+			path = "Tests/Integration";
 			sourceTree = "<group>";
 		};
 		9CEEC13202AFBF12EE3ABB99 = {
@@ -233,6 +240,7 @@
 			isa = "PBXGroup";
 			children = (
 				"878A52FC5FF6A57D50B7B870",
+				"0347EAE7C199A8C101C7F934",
 				"9CEEC13202AFBF12EE3ABB99",
 				"7367AB9A454559025D4D8EE2",
 				"C2D4B446A44CE54FAB8E0115",
@@ -285,11 +293,11 @@
 				"08B238356DC463A40BBE0925",
 				"358C5412BABC4F8409162B87",
 				"C428392452851D32756F5BD4",
-				"C0601F09824E52C483DFC080",
 				"519D0FEC4431DDF9D251698B",
 				"7577DD0E295AE598EF902689",
-				"794C6354B4618B5E44C56132",
 				"A4F9ED9D5106A4B5FB6971B4",
+				"6ABD95198D6149FD645F577C",
+				"FB47A71E388A3CA9D793FE6E",
 			);
 			runOnlyForDeploymentPostprocessing = "0";
 		};

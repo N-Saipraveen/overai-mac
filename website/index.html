@@ -1,0 +1,687 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="https://n-saipraveen.github.io/overai-mac/" rel="canonical" />
+    <meta content="strict-origin-when-cross-origin" name="referrer" />
+    <meta
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+      http-equiv="Content-Security-Policy"
+    />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <meta content="#f7f7f2" name="theme-color" />
+    <title>OverAI — All your AI. One button. Privacy first.</title>
+    <meta
+      content="Your favorite AI websites behind one button. A native floating window for Mac with built-in capture protection. No AI API keys. Your existing accounts."
+      name="description"
+    />
+    <meta
+      content="OverAI — All your AI. One button. Privacy first."
+      property="og:title"
+    />
+    <meta
+      content="Your favorite AI websites behind one button. A native floating window for Mac with built-in capture protection. No AI API keys. Your existing accounts."
+      property="og:description"
+    />
+    <meta content="website" property="og:type" />
+    <meta content="https://n-saipraveen.github.io/overai-mac/" property="og:url" />
+    <meta
+      content="https://n-saipraveen.github.io/overai-mac/assets/social-card.png"
+      property="og:image"
+    />
+    <meta
+      content="OverAI floating over a Mac workspace"
+      property="og:image:alt"
+    />
+    <meta content="summary_large_image" name="twitter:card" />
+    <link href="assets/overai.png" rel="icon" />
+    <link href="styles.css?v=38a31d2909" rel="stylesheet" />
+    <script defer="" src="app.js?v=b104374754"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="nav">
+      <a aria-label="OverAI home" class="brand" href="#"
+        ><img
+          alt=""
+          height="32"
+          src="assets/overai.png"
+          width="32"
+        />OverAI<span class="platform">for Mac</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#privacy">Privacy first</a><a href="#experience">All your AI</a
+        ><a href="#questions">FAQ</a>
+      </nav>
+      <a class="button small dark" href="#get"
+        >Get OverAI <span aria-hidden="true">↗</span></a
+      >
+    </header>
+    <main id="main">
+      <section class="hero wrap">
+        <div class="eyebrow">
+          <span class="status-dot"></span> ALL YOUR AI. PRIVACY FIRST.
+        </div>
+        <h1>
+          All your AI.<br /><span class="hero-emphasis">One button.</span>
+        </h1>
+        <p class="hero-copy">
+          Your favorite AI websites. One floating Mac window.<br />Switch in a
+          click. Keep your thinking space private.
+        </p>
+        <div class="hero-actions">
+          <a class="button dark" href="#get"
+            ><span aria-hidden="true">↓</span> Get OverAI — free</a
+          ><button class="text-button" id="watch">
+            Explore the experience <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+        <div aria-label="At a glance" class="hero-benefits">
+          <span>✳ No AI API keys</span><span>◎ Use free website plans</span
+          ><a href="#privacy">◈ Built-in capture protection ↗</a>
+        </div>
+        <p class="compatibility">
+          Apple Silicon · macOS 14 or later · Provider limits apply
+        </p>
+        <div
+          aria-label="Interactive illustration: all your AI in one button"
+          class="ai-hub"
+          id="ai-hub"
+        >
+          <div aria-hidden="true" class="hub-wash"></div>
+          <svg aria-hidden="true" class="hub-connections" viewbox="0 0 900 390">
+            <g fill="none" stroke="currentColor">
+              <path d="M180 95 Q320 95 450 185"></path>
+              <path d="M450 50 L450 185"></path>
+              <path d="M720 95 Q580 95 450 185"></path>
+              <path d="M180 290 Q320 290 450 185"></path>
+              <path d="M450 340 L450 185"></path>
+              <path d="M720 290 Q580 290 450 185"></path>
+            </g>
+          </svg>
+          <div id="orbit-providers"></div>
+          <div class="hub-center">
+            <span class="hub-private"
+              ><svg aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 3 5 6v6c0 4 7 9 7 9s7-5 7-9V6Z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+              PRIVACY FIRST</span
+            ><button
+              aria-controls="hub-picker"
+              aria-expanded="false"
+              class="hub-button"
+              id="hub-button"
+            >
+              <img
+                alt=""
+                height="48"
+                id="hub-active-icon"
+                src="assets/overai.png"
+                width="48"
+              /><span id="hub-active-name"
+                >OverAI<small>All your AI websites</small></span
+              ><span aria-hidden="true" class="hub-chevron">⌄</span>
+            </button>
+            <div class="hub-picker" hidden="" id="hub-picker">
+              <span class="hub-picker-label">YOUR WEBSITES</span>
+              <div id="hub-picker-options"></div>
+              <span class="hub-picker-footer"
+                >Your accounts. No AI API keys.</span
+              >
+            </div>
+            <p aria-live="polite" class="hub-hint" id="hub-hint">
+              One button. Choose your AI.
+            </p>
+          </div>
+          <div class="hub-bottom">
+            <span><i></i> Native Mac app</span
+            ><span
+              >⌘ G
+              <span class="hub-bottom-muted">or your own shortcut</span></span
+            >
+          </div>
+        </div>
+        <div class="hero-principles">
+          <a href="#experience"
+            ><span>01</span> All your AI, one place
+            <b aria-hidden="true">↗</b></a
+          ><a href="#privacy"
+            ><span>02</span> Privacy comes built in
+            <b aria-hidden="true">↗</b></a
+          ><a href="#questions"
+            ><span>03</span> No AI API keys <b aria-hidden="true">↗</b></a
+          >
+        </div>
+      </section>
+      <section class="privacy-section" id="privacy">
+        <div class="wrap">
+          <div class="privacy-top reveal">
+            <span class="eyebrow">PRIVACY IS PART OF THE PRODUCT.</span>
+            <h2>
+              Your AI, within reach.<br /><span>Your space, protected.</span>
+            </h2>
+            <p>
+              Built-in capture protection. Direct website connections.<br />No
+              OverAI prompt collection. Privacy, from the first click.
+            </p>
+          </div>
+          <div class="capture-story reveal">
+            <div class="capture-copy">
+              <span class="eyebrow">YOUR WINDOW. YOUR SCREEN SHARE.</span>
+              <h3>In your flow.<br />Out of the recording.</h3>
+              <p>
+                Built-in capture protection helps keep your OverAI window out of
+                supported screen recordings and screen shares, while your work
+                stays visible.
+              </p>
+              <button aria-pressed="false" id="capture-toggle">
+                Preview the recording <span aria-hidden="true">↗</span></button
+              ><small
+                >Illustration of a supported capture path. Compatibility varies;
+                test your setup first.</small
+              >
+            </div>
+            <div class="capture-monitor" id="capture-monitor">
+              <div class="capture-bar">
+                <span class="record-dot"></span
+                ><span id="capture-label">Your display · illustration</span>
+              </div>
+              <div aria-hidden="true" class="capture-editor">
+                <span>THE NEXT BIG THING</span
+                ><strong>Great ideas<br />start here.</strong><i></i><i></i
+                ><i></i>
+              </div>
+              <div aria-hidden="true" class="capture-overlay">
+                <div>
+                  <img
+                    alt=""
+                    height="22"
+                    src="assets/overai.png"
+                    width="22"
+                  />OverAI <span>⌘ G</span>
+                </div>
+                <strong>A little help?</strong>
+                <p>Your private thinking space.</p>
+                <i></i><i></i
+                ><span class="capture-mini-input">Ask anything <b>↑</b></span>
+              </div>
+              <div class="capture-result" id="capture-result">
+                Capture protection · built in
+              </div>
+            </div>
+          </div>
+          <div class="privacy-flow reveal">
+            <div class="flow-end">
+              <img
+                alt=""
+                height="56"
+                src="assets/overai.png"
+                width="56"
+              /><strong>Your Mac</strong><span>OverAI + WebKit</span>
+            </div>
+            <div class="flow-line">
+              <span>Direct website connection</span><i></i
+              ><small>No OverAI prompt relay</small>
+            </div>
+            <div class="flow-end">
+              <div aria-hidden="true" class="web-symbol">◎</div>
+              <strong>Your AI website</strong><span>Your existing account</span>
+            </div>
+          </div>
+          <div class="privacy-columns">
+            <article class="reveal">
+              <span class="privacy-number">01</span>
+              <h3>No prompt collection.</h3>
+              <p>
+                OverAI doesn’t add prompt logging or analytics. The websites you
+                visit process your content under their own privacy policies.
+              </p>
+            </article>
+            <article class="reveal">
+              <span class="privacy-number">02</span>
+              <h3>Permission, with purpose.</h3>
+              <p>
+                You control microphone access and choose the files you share.
+                Website sessions stay in OverAI’s local WebKit store, separate
+                from Safari or Chrome.
+              </p>
+            </article>
+            <article class="reveal">
+              <span class="privacy-number">03</span>
+              <h3>A more private window.</h3>
+              <p>
+                Capture protection is designed to exclude OverAI’s own windows
+                from supported capture paths. Results depend on macOS and the
+                recording app.
+              </p>
+            </article>
+          </div>
+          <p class="privacy-footnote">
+            Capture protection is not a guarantee of invisibility. Test your
+            meeting setup before sharing. System dialogs and external browser
+            windows are outside OverAI’s protection.
+          </p>
+        </div>
+      </section>
+      <section class="intro wrap" id="experience">
+        <div class="eyebrow">ONE BUTTON. YOUR ENTIRE AI LINEUP.</div>
+        <h2>Pick your AI.<br /><span class="muted">Keep your flow.</span></h2>
+        <p>
+          ChatGPT for one thought. Claude for the next. Your own websites,
+          too.<br />One selector brings them together, using the original
+          websites and your existing accounts.
+        </p>
+        <div class="desktop reveal" id="demo">
+          <div class="desktop-menubar">
+            <span>●   Finder   <b>File</b>   Edit   View</span
+            ><span>◒   ◉   Thu 9:41</span>
+          </div>
+          <div class="wallpaper">
+            <div class="landscape mountain-back"></div>
+            <div class="landscape mountain-front"></div>
+            <div class="desktop-note">
+              <span class="note-tag">A LITTLE ROOM TO THINK</span>
+              <h2>Keep your ideas<br />in the foreground.</h2>
+              <p>Your work is right where you left it.</p>
+            </div>
+            <div class="work-document">
+              <span class="doc-breadcrumb">Notes   /   The next big thing</span>
+              <h3>Make room for the idea.</h3>
+              <p>Good things start with a little curiosity.</p>
+              <div class="fake-line"></div>
+              <div class="fake-line medium"></div>
+              <div class="fake-line short"></div>
+              <div class="doc-highlight">
+                What if getting help didn’t interrupt the work?
+              </div>
+              <div class="fake-line"></div>
+              <div class="fake-line medium"></div>
+            </div>
+            <div class="ai-window" id="ai-window">
+              <div class="window-toolbar">
+                <div class="traffic"><i></i><i></i><i></i></div>
+                <button
+                  aria-controls="provider-menu"
+                  aria-expanded="false"
+                  class="provider-toggle"
+                  id="provider-toggle"
+                >
+                  <img
+                    alt=""
+                    height="18"
+                    id="active-icon"
+                    src="assets/chatgpt.png"
+                    width="18"
+                  /><span id="active-provider">ChatGPT</span
+                  ><span aria-hidden="true">⌄</span>
+                </button>
+                <div class="window-actions">
+                  <button
+                    aria-label="Decrease demo window opacity"
+                    id="opacity-down"
+                  >
+                    −</button
+                  ><button
+                    aria-label="Increase demo window opacity"
+                    id="opacity-up"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <div class="provider-menu" hidden="" id="provider-menu"></div>
+              <div class="chat-content">
+                <span class="demo-label">INTERACTIVE PREVIEW</span
+                ><img
+                  alt=""
+                  class="chat-logo"
+                  height="38"
+                  id="chat-logo"
+                  src="assets/chatgpt.png"
+                  width="38"
+                />
+                <h3 id="chat-title">A fresh perspective?</h3>
+                <p id="chat-subtitle">A little help for your next big idea.</p>
+                <div class="example-question" id="example-question">
+                  Help me turn this idea into a plan.
+                </div>
+                <div class="example-answer" id="example-answer">
+                  <span aria-hidden="true" class="answer-spark">✳</span>
+                  <div>
+                    <strong>Start small. Make it real.</strong>
+                    <p>
+                      Define the goal. Find the first step.<br />Build something
+                      you’d love to use.
+                    </p>
+                  </div>
+                </div>
+                <div class="chat-input">
+                  <span>Ask anything</span
+                  ><span aria-hidden="true" class="input-plus">+</span
+                  ><span aria-hidden="true" class="send-arrow">↑</span>
+                </div>
+                <span class="preview-disclaimer"
+                  >Illustrative demo · no messages are sent</span
+                >
+              </div>
+            </div>
+            <button
+              aria-pressed="true"
+              class="shortcut-pill"
+              id="shortcut-demo"
+            >
+              <kbd>⌘</kbd><kbd>G</kbd><span>Your AI. Right here.</span>
+            </button>
+          </div>
+          <div class="demo-controls">
+            <span><span class="tiny-dot"></span> A native Mac experience</span
+            ><button aria-pressed="false" id="demo-play">
+              ▶ Play the walkthrough</button
+            ><span class="demo-counter" id="demo-counter">01 / 03</span>
+          </div>
+        </div>
+        <div class="provider-strip">
+          <span>Familiar faces.<br />A new home.</span>
+          <div id="provider-strip-icons"></div>
+          <p>Your existing accounts.<br />Your usual websites.</p>
+        </div>
+      </section>
+      <section class="feature-grid wrap">
+        <article class="feature feature-shortcut reveal">
+          <div class="feature-copy">
+            <span class="eyebrow">01 / CALL IT UP</span>
+            <h3>One shortcut.<br />Back in your flow.</h3>
+            <p>
+              Show it. Ask it. Hide it. Make the shortcut your own, and keep
+              your hands on the keyboard.
+            </p>
+          </div>
+          <div aria-hidden="true" class="key-scene">
+            <div class="key-cap">⌘<span>command</span></div>
+            <div class="key-cap letter">G</div>
+            <span class="key-caption">An idea is only a keystroke away.</span>
+          </div>
+        </article>
+        <article class="feature feature-provider reveal">
+          <div class="feature-copy">
+            <span class="eyebrow">02 / MAKE IT YOURS</span>
+            <h3>Your AI lineup.<br />Your kind of order.</h3>
+            <p>
+              Add your own websites. Remove the ones you don’t use. Arrange
+              everything just how you like it.
+            </p>
+          </div>
+          <div class="lineup" id="lineup">
+            <div>
+              <span aria-hidden="true" class="drag-grip">⠿</span
+              ><img
+                alt=""
+                height="28"
+                src="assets/claude.png"
+                width="28"
+              /><strong>Claude</strong
+              ><span class="lineup-tag">Writing partner</span>
+            </div>
+            <div>
+              <span aria-hidden="true" class="drag-grip">⠿</span
+              ><img
+                alt=""
+                height="28"
+                src="assets/chatgpt.png"
+                width="28"
+              /><strong>ChatGPT</strong
+              ><span class="lineup-tag">Everyday ideas</span>
+            </div>
+            <div>
+              <span aria-hidden="true" class="drag-grip">⠿</span
+              ><span class="custom-site">↗</span><strong>Your website</strong
+              ><span class="lineup-tag">Your choice</span>
+            </div>
+            <button id="reorder">↕ Try rearranging</button>
+          </div>
+        </article>
+      </section>
+      <section class="native wrap reveal">
+        <div>
+          <span class="eyebrow">SMALL DETAILS. BIG DIFFERENCE.</span>
+          <h2>
+            Feels right.<br /><span class="serif">Because it’s Mac.</span>
+          </h2>
+          <p>
+            Built with Swift and Apple’s WebKit.<br />A thoughtful little
+            companion, from the first shortcut to the last idea of the day.
+          </p>
+        </div>
+        <div class="native-details">
+          <article>
+            <span aria-hidden="true" class="detail-icon">◐</span>
+            <div>
+              <h3>Find your balance.</h3>
+              <p>Adjust window opacity with a tap. Keep your work in view.</p>
+            </div>
+          </article>
+          <article>
+            <span aria-hidden="true" class="detail-icon">↗</span>
+            <div>
+              <h3>Ready when you are.</h3>
+              <p>
+                Choose to show or hide at startup. Open websites only when you
+                need them.
+              </p>
+            </div>
+          </article>
+          <article>
+            <span aria-hidden="true" class="detail-icon">◷</span>
+            <div>
+              <h3>Pick up where you left off.</h3>
+              <p>
+                Persistent website sessions help keep you signed in. Providers
+                may occasionally ask you to log in again.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="everyday wrap reveal">
+        <span class="eyebrow">FOR THE WAY YOUR DAY UNFOLDS</span>
+        <h2>Big ideas.<br />Little everyday assists.</h2>
+        <div aria-label="Everyday uses" class="use-tabs" role="tablist">
+          <button
+            aria-controls="use-panel"
+            aria-selected="true"
+            data-use="write"
+            id="tab-write"
+            role="tab"
+          >
+            Write a little better</button
+          ><button
+            aria-controls="use-panel"
+            aria-selected="false"
+            data-use="build"
+            id="tab-build"
+            role="tab"
+            tabindex="-1"
+          >
+            Get unstuck</button
+          ><button
+            aria-controls="use-panel"
+            aria-selected="false"
+            data-use="learn"
+            id="tab-learn"
+            role="tab"
+            tabindex="-1"
+          >
+            Follow your curiosity
+          </button>
+        </div>
+        <div
+          aria-labelledby="tab-write"
+          class="use-panel"
+          id="use-panel"
+          role="tabpanel"
+        >
+          <span aria-hidden="true" class="use-index">Aa</span>
+          <div>
+            <h3 id="use-title">Find the words you meant.</h3>
+            <p id="use-copy">
+              Give a rough draft a clearer shape, find a friendlier tone, or
+              turn a page of thoughts into a simple outline.
+            </p>
+            <div class="prompt-example" id="use-prompt">
+              “Make this sound a little more like me.”
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="get-section wrap reveal" id="get">
+        <div class="get-copy">
+          <img
+            alt="OverAI app icon"
+            height="68"
+            src="assets/overai.png"
+            width="68"
+          />
+          <h2>
+            A little closer<br />to your <span class="serif">next idea.</span>
+          </h2>
+          <p>
+            A native home for the AI websites you love.<br />Made for Mac. Made
+            to stay out of your way.
+          </p>
+        </div>
+        <div class="price-card">
+          <span class="eyebrow">YOUR AI. FREELY WITHIN REACH.</span>
+          <div class="price">
+            Free<span>No subscription. No license key.</span>
+          </div>
+          <p>OverAI is completely free.<br />AI provider plans are separate.</p>
+          <div class="price-rule"></div>
+          <ul>
+            <li>Native app for Apple Silicon</li>
+            <li>Custom websites &amp; shortcuts</li>
+            <li>Your existing AI accounts</li>
+            <li>No AI API keys required</li>
+          </ul>
+          <a
+            class="button dark full"
+            href="https://github.com/N-Saipraveen/overai-mac/releases/download/v3.0.0-beta.1/OverAI-3.0.0-3004-preview-arm64.dmg"
+            >Download free preview <span aria-hidden="true">↓</span></a
+          ><span class="purchase-note"
+            >Apple Silicon · macOS 14+<br />Unnotarized preview. macOS may block
+            opening.<br /><a
+              href="https://github.com/N-Saipraveen/overai-mac/releases/tag/v3.0.0-beta.1"
+              rel="noopener noreferrer"
+              target="_blank"
+              >Release notes, installation &amp; checksums ↗</a
+            ></span
+          >
+        </div>
+      </section>
+      <section class="faq wrap reveal" id="questions">
+        <div>
+          <span class="eyebrow">A FEW THINGS YOU MIGHT WONDER</span>
+          <h2>Good questions.<br />Clear answers.</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>
+              Does OverAI give me free access to paid AI models?
+            </summary>
+            <p>
+              OverAI itself is completely free. AI websites keep their own
+              account requirements, subscriptions, and usage limits. OverAI
+              doesn’t unlock paid models.
+            </p>
+          </details>
+          <details>
+            <summary>Do I need an API key?</summary>
+            <p>
+              No AI API key is needed. Use a provider’s free website plan or
+              your existing paid plan. Sign in to each AI website using your
+              existing account, just as you would in a browser.
+            </p>
+          </details>
+          <details>
+            <summary>Will I have to sign in every time?</summary>
+            <p>
+              OverAI keeps website sessions in a persistent WebKit data store on
+              your Mac. Providers can expire sessions or request verification.
+              Safari and Chrome logins aren’t imported.
+            </p>
+          </details>
+          <details>
+            <summary>Will it appear in my screen share?</summary>
+            <p>
+              OverAI includes capture protection for its own app windows on
+              supported capture paths. Compatibility varies with macOS and
+              meeting or recording software. Always test your setup; it cannot
+              guarantee invisibility or hide system dialogs.
+            </p>
+          </details>
+          <details>
+            <summary>Does it work offline or run a local AI model?</summary>
+            <p>
+              The included AI websites need an internet connection. OverAI
+              doesn’t bundle a local model or automatically install Ollama,
+              Docker, or Open WebUI.
+            </p>
+          </details>
+          <details>
+            <summary>What about memory use?</summary>
+            <p>
+              The app loads websites as you visit them and limits background
+              activity. The AI websites still use memory, and visited pages are
+              retained to preserve their state. Usage varies with your websites
+              and conversations.
+            </p>
+          </details>
+          <details>
+            <summary>Which Macs does it support?</summary>
+            <p>
+              OverAI supports Apple Silicon Macs running macOS 14 or later. The
+              current free preview is ad-hoc signed and is not notarized by
+              Apple. macOS Gatekeeper may block it; read the release notes
+              before installing.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap">
+      <div class="footer-top">
+        <a class="brand" href="#"
+          ><img
+            alt=""
+            height="30"
+            src="assets/overai.png"
+            width="30"
+          />OverAI</a
+        >
+        <p>AI, within reach.</p>
+        <a
+          href="https://github.com/N-Saipraveen/overai-mac"
+          rel="noopener noreferrer"
+          target="_blank"
+          >GitHub ↗</a
+        >
+      </div>
+      <div class="footer-bottom">
+        <span>Built with care by Sai Praveen.</span>
+        <div>
+          <a href="privacy.html">Privacy</a
+          ><a href="mailto:hello@saipraveen.dev">Contact ↗</a
+          ><button aria-pressed="false" id="motion-toggle">
+            Pause animations
+          </button>
+        </div>
+      </div>
+      <p class="trademark">
+        Independent software. Not affiliated with Apple or the AI providers.
+        Provider names and marks belong to their respective owners. Demo
+        conversations are illustrative.
+      </p>
+    </footer>
+  </body>
+</html>

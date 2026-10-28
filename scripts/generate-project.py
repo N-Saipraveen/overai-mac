@@ -43,6 +43,13 @@ for source in sorted((root / "Sources/OverAI").glob("*.swift")):
     source_builds.append(add("build:" + name, "PBXBuildFile", fileRef=ref("file:" + name)))
 
 add("sources", "PBXGroup", children=source_refs, path="Sources/OverAI", sourceTree="<group>")
+validation_refs = []
+for source in sorted((root / "Tests/Integration").glob("*.swift")):
+    name = source.name
+    validation_refs.append(add("test-file:" + name, "PBXFileReference", lastKnownFileType="sourcecode.swift", path=name, sourceTree="<group>"))
+    source_builds.append(add("test-build:" + name, "PBXBuildFile", fileRef=ref("test-file:" + name)))
+add("integration-tests", "PBXGroup", children=validation_refs, path="Tests/Integration", sourceTree="<group>")
+
 add("plist", "PBXFileReference", lastKnownFileType="text.plist.xml", path="Info.plist", sourceTree="<group>")
 add("notices", "PBXFileReference", lastKnownFileType="text", path="Sources/OverAI/Resources/ThirdPartyNotices.txt", sourceTree="<group>")
 add("icon", "PBXFileReference", lastKnownFileType="image.icns", path="Sources/OverAI/Resources/icon.icns", sourceTree="<group>")
@@ -52,7 +59,7 @@ add("notices-build", "PBXBuildFile", fileRef=ref("notices"))
 add("icon-build", "PBXBuildFile", fileRef=ref("icon"))
 add("product", "PBXFileReference", explicitFileType="wrapper.application", includeInIndex="0", path="OverAI.app", sourceTree="BUILT_PRODUCTS_DIR")
 add("products", "PBXGroup", children=[ref("product")], name="Products", sourceTree="<group>")
-add("main", "PBXGroup", children=[ref("sources"), ref("plist"), ref("notices"), ref("icon"), ref("provider-icons"), ref("products")], sourceTree="<group>")
+add("main", "PBXGroup", children=[ref("sources"), ref("integration-tests"), ref("plist"), ref("notices"), ref("icon"), ref("provider-icons"), ref("products")], sourceTree="<group>")
 add("keyboard-package", "XCRemoteSwiftPackageReference", repositoryURL="https://github.com/sindresorhus/KeyboardShortcuts", requirement={"kind": "exactVersion", "version": "3.1.0"})
 add("core-package", "XCLocalSwiftPackageReference", relativePath=".")
 add("keyboard-product", "XCSwiftPackageProductDependency", package=ref("keyboard-package"), productName="KeyboardShortcuts")

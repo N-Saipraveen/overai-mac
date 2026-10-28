@@ -11,7 +11,8 @@ xcuserdata/
 .swiftpm/
 
 # Local validation output and machine metadata
-native/Validation/
+Validation/
+native/
 .DS_Store
 *.log
 __pycache__/
