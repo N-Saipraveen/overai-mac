@@ -21,3 +21,6 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# Optional packaging environment
+.venv/

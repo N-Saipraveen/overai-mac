@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f2" />
+    <meta
+      name="description"
+      content="Install OverAI on your Mac: download, drag to Applications, approve the preview if needed, and press Command-G."
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <link
+      rel="canonical"
+      href="https://n-saipraveen.github.io/overai-mac/install.html"
+    />
+    <title>Install OverAI — Your first conversation starts here.</title>
+    <link rel="icon" href="assets/overai.png?v=3005" />
+    <link rel="stylesheet" href="styles.css?v=9905c75e7a" />
+    <script defer src="install.js?v=4892a04c07"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to installation</a>
+    <header class="nav">
+      <a class="brand" href="./"
+        ><img
+          src="assets/overai.png?v=3005"
+          width="32"
+          height="32"
+          alt=""
+        />OverAI<span class="platform">Install for Mac</span></a
+      ><a
+        class="button dark small"
+        href="https://github.com/N-Saipraveen/overai-mac/releases/download/v3.0.1-beta.1/OverAI-3.0.1-3005-preview-arm64.dmg"
+        >Download free preview ↓</a
+      >
+    </header>
+    <main id="main" class="install-page wrap">
+      <div class="install-heading">
+        <span class="eyebrow">A FEW SMALL STEPS. THEN YOU’RE IN.</span>
+        <h1>
+          Your first conversation<br />starts <span class="serif">here.</span>
+        </h1>
+        <p>Apple Silicon · macOS 14 or later · Completely free</p>
+        <span class="install-preview-label"
+          >This preview is not notarized by Apple. First-launch approval may be
+          needed.</span
+        >
+      </div>
+      <img
+        class="install-overview"
+        src="assets/install-guide.png"
+        width="2000"
+        height="660"
+        alt="Four steps: Download, drag into Applications, open OverAI, then press Command-G."
+      />
+      <div class="install-steps">
+        <article>
+          <span class="install-step-number">01</span>
+          <div>
+            <h2>Download OverAI.</h2>
+            <p>
+              Get the
+              <a
+                href="https://github.com/N-Saipraveen/overai-mac/releases/download/v3.0.1-beta.1/OverAI-3.0.1-3005-preview-arm64.dmg"
+                >Apple Silicon DMG</a
+              >
+              from the official GitHub release. You don’t need an OverAI
+              account, license key, or AI API key.
+            </p>
+          </div>
+        </article>
+        <article>
+          <span class="install-step-number">02</span>
+          <div>
+            <h2>One small drag.</h2>
+            <p>
+              Open the downloaded DMG. Drag <strong>OverAI</strong> onto
+              <strong>Applications</strong> and wait for it to finish copying.
+              Eject the disk image afterward.
+            </p>
+            <p>
+              Updating? Quit OverAI before copying, then choose Replace if
+              Finder asks. Existing native-app website sessions stay in place.
+            </p>
+          </div>
+        </article>
+        <article>
+          <span class="install-step-number">03</span>
+          <div>
+            <h2>Open it from Applications.</h2>
+            <p>
+              Open Finder → Applications → OverAI. Choose Show OverAI or Start
+              Hidden. Optional microphone setup can be skipped. If macOS blocks
+              opening, follow the steps below.
+            </p>
+          </div>
+        </article>
+        <article>
+          <span class="install-step-number">04</span>
+          <div>
+            <h2>Press ⌘G. You’re ready.</h2>
+            <p>
+              Choose a website, sign in, and start your conversation. Change
+              your shortcut in Settings → General, and customize your websites
+              in Settings → Websites.
+            </p>
+          </div>
+        </article>
+      </div>
+      <section class="install-help" id="first-launch">
+        <span class="eyebrow">IF MACOS BLOCKS THE FIRST LAUNCH</span>
+        <h2>“Apple could not verify OverAI.”</h2>
+        <p>
+          The preview is ad-hoc signed and has not been notarized by Apple.
+          macOS cannot verify it as an identified-developer release. Only
+          approve it if you trust the official download and have checked its
+          published checksum.
+        </p>
+        <ol>
+          <li>
+            Try opening OverAI from <strong>Applications</strong> once. Dismiss
+            the warning with Done or OK.
+          </li>
+          <li>
+            Open
+            <strong>Apple menu → System Settings → Privacy & Security</strong>.
+          </li>
+          <li>
+            Scroll to <strong>Security</strong> and find the message that OverAI
+            was blocked. Click <strong>Open Anyway</strong>.
+          </li>
+          <li>
+            Authenticate if asked, then click <strong>Open</strong> in the
+            confirmation.
+          </li>
+        </ol>
+        <p>
+          macOS saves the exception for future launches. If the button is
+          missing, try opening the app again and return to Privacy & Security. A
+          managed Mac may prohibit exceptions; ask its administrator.
+        </p>
+        <a
+          class="install-source"
+          href="https://support.apple.com/en-us/102445"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Apple’s first-launch guidance ↗</a
+        >
+        <aside class="install-caution">
+          <strong>A different warning?</strong>
+          <p>
+            If macOS reports malware, says the app will damage your computer, or
+            reports a damaged/modified app, stop. Redownload from the official
+            release, verify the checksum, and contact support. Do not use a
+            Terminal bypass to dismiss those warnings.
+          </p>
+        </aside>
+      </section>
+      <details class="install-advanced" id="terminal">
+        <summary>Terminal fallback · the xattr method</summary>
+        <p>
+          For advanced users only. Prefer Open Anyway above. Use this only for a
+          trusted, checksum-verified official preview already installed in
+          <code>/Applications</code>.
+        </p>
+        <p>First check that the bundled signature is intact:</p>
+        <div class="install-command">
+          <pre
+            id="signature-command"
+          ><code>codesign --verify --deep --strict --verbose=2 "/Applications/OverAI.app"</code></pre>
+          <button
+            data-copy="signature-command"
+            aria-label="Copy signature verification command"
+          >
+            Copy
+          </button>
+        </div>
+        <p>
+          If verification fails, stop and download a fresh copy. An ad-hoc
+          signature check confirms consistency, not the developer’s identity or
+          absence of malware.
+        </p>
+        <p>Then remove only OverAI’s quarantine attribute and open the app:</p>
+        <div class="install-command">
+          <pre
+            id="quarantine-command"
+          ><code>xattr -dr com.apple.quarantine "/Applications/OverAI.app"
+open "/Applications/OverAI.app"</code></pre>
+          <button
+            data-copy="quarantine-command"
+            aria-label="Copy app-specific xattr commands"
+          >
+            Copy
+          </button>
+        </div>
+        <p>
+          This bypasses the quarantine-based first-launch check for this app. It
+          does not notarize, scan, or repair it. Do not run the command on a
+          whole folder or disk, disable Gatekeeper, or use
+          <code>xattr -cr</code> to clear every attribute. No
+          <code>sudo</code> is included; if permission is denied, use the macOS
+          approval flow or contact support.
+        </p>
+        <p>
+          Use your app’s exact path if you installed it elsewhere. “No such
+          xattr” means the attribute is already absent; it does not prove that
+          the app is safe.
+        </p>
+      </details>
+      <details class="install-advanced" id="checksum">
+        <summary>Verify your download’s SHA-256 checksum</summary>
+        <p>
+          Download <code>SHA256SUMS.txt</code> from the
+          <a
+            href="https://github.com/N-Saipraveen/overai-mac/releases/tag/v3.0.1-beta.1"
+            >same release</a
+          >. Run this in Terminal:
+        </p>
+        <div class="install-command">
+          <pre id="checksum-command"><code>cd ~/Downloads
+shasum -a 256 OverAI-3.0.1-3005-preview-arm64.dmg</code></pre>
+          <button
+            data-copy="checksum-command"
+            aria-label="Copy download checksum command"
+          >
+            Copy
+          </button>
+        </div>
+        <p>
+          The full 64-character result must match the DMG line in
+          SHA256SUMS.txt. A checksum detects changed content; it does not
+          replace trust in the source.
+        </p>
+      </details>
+      <p
+        class="install-copy-status"
+        id="copy-status"
+        role="status"
+        aria-live="polite"
+      ></p>
+      <div class="install-contact">
+        <h2>A little help getting started?</h2>
+        <a href="mailto:hello@saipraveen.dev">hello@saipraveen.dev ↗</a>
+        <p>
+          Provider accounts and usage limits remain separate. Capture protection
+          depends on your macOS and recording setup.
+        </p>
+      </div>
+    </main>
+    <footer class="wrap">
+      <div class="footer-bottom">
+        <span>Built by Sai Praveen.</span>
+        <div>
+          <a href="./">OverAI</a><a href="privacy.html">Privacy</a
+          ><a href="https://github.com/N-Saipraveen/overai-mac">GitHub ↗</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

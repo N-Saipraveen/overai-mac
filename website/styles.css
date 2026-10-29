@@ -2509,3 +2509,250 @@ footer {
     margin-top: 20px;
   }
 }
+.install-page {
+  max-width: 1100px;
+  padding-top: 70px;
+  padding-bottom: 65px;
+}
+.install-heading {
+  text-align: center;
+}
+.install-heading h1 {
+  font-size: clamp(40px, 5.5vw, 67px);
+  letter-spacing: -3px;
+  font-weight: 500;
+  line-height: 1.05;
+  margin: 25px 0;
+}
+.install-heading > p {
+  font-size: 13px;
+  color: #64725a;
+}
+.install-preview-label {
+  display: block;
+  font-size: 10px;
+  color: #6f7e64;
+  margin-top: 18px;
+}
+.install-overview {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 40px 0 25px;
+  border-radius: 17px;
+  border: 1px solid #e0e5d7;
+}
+.install-steps {
+  max-width: 790px;
+  margin: 0 auto;
+}
+.install-steps article {
+  display: flex;
+  gap: 25px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+.install-step-number {
+  font-size: 11px;
+  color: #7a8c6b;
+  padding-top: 5px;
+  min-width: 25px;
+}
+.install-steps h2 {
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: -0.8px;
+  margin: 0 0 13px;
+}
+.install-steps p,
+.install-help p,
+.install-advanced p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #65725a;
+}
+.install-page p a,
+.install-advanced a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.install-help {
+  background: #e9eedf;
+  border: 1px solid #d6e0cb;
+  border-radius: 20px;
+  padding: 35px 40px;
+  margin: 55px auto 25px;
+  max-width: 790px;
+  scroll-margin-top: 30px;
+}
+.install-help h2 {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  margin: 20px 0;
+}
+.install-help ol {
+  padding-left: 20px;
+  margin: 22px 0;
+}
+.install-help li {
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 15px 0;
+  color: #48583e;
+  padding-left: 7px;
+}
+.install-source {
+  font-size: 11px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: #526a40;
+}
+.install-caution {
+  background: #f7f8ef;
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-top: 25px;
+}
+.install-caution strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+.install-caution p {
+  font-size: 11px;
+  margin: 8px 0 0;
+}
+.install-advanced {
+  max-width: 790px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--line);
+  padding: 5px 0 15px;
+}
+.install-advanced summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 18px 0;
+  line-height: 1.6;
+}
+.install-advanced > p {
+  margin: 10px 0 20px;
+}
+.install-advanced code {
+  font-size: 11px;
+}
+.install-command {
+  position: relative;
+  background: #293126;
+  color: #e4ecdc;
+  border-radius: 12px;
+  padding: 18px 70px 18px 20px;
+  margin: 15px 0 22px;
+  max-width: 100%;
+}
+.install-command pre {
+  overflow: auto;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.9;
+  white-space: pre;
+}
+.install-command button {
+  position: absolute;
+  right: 12px;
+  top: 14px;
+  font-size: 10px;
+  border: 1px solid #80906e;
+  border-radius: 6px;
+  padding: 6px;
+  color: #e3edda;
+  min-width: 42px;
+}
+.install-contact {
+  max-width: 790px;
+  margin: 48px auto 0;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+.install-contact h2 {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.8px;
+}
+.install-contact > a {
+  font-size: 14px;
+  color: #647d50;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.install-contact > p {
+  font-size: 10px;
+  color: #6a7c5b;
+  line-height: 1.8;
+  margin-top: 23px;
+}
+.install-copy-status {
+  max-width: 790px;
+  margin: 14px auto;
+  font-size: 11px;
+  color: #5b7248;
+  min-height: 18px;
+}
+@media (max-width: 700px) {
+  .install-page {
+    padding-top: 45px;
+  }
+  .install-heading h1 {
+    font-size: 42px;
+    letter-spacing: -2px;
+  }
+  .install-heading > p {
+    font-size: 10px;
+  }
+  .install-preview-label {
+    font-size: 9px;
+    line-height: 1.8;
+    max-width: 300px;
+    margin: 17px auto 0;
+  }
+  .install-overview {
+    margin-top: 25px;
+  }
+  .install-steps article {
+    gap: 15px;
+    padding: 24px 0;
+  }
+  .install-steps h2 {
+    font-size: 22px;
+  }
+  .install-steps p,
+  .install-help p,
+  .install-help li,
+  .install-advanced p {
+    font-size: 12px;
+  }
+  .install-help {
+    padding: 25px 22px;
+    margin-top: 35px;
+  }
+  .install-help h2 {
+    font-size: 26px;
+  }
+  .install-command {
+    padding-left: 14px;
+    padding-right: 65px;
+  }
+  .install-command pre {
+    font-size: 10px;
+  }
+  .install-contact h2 {
+    font-size: 23px;
+  }
+  .install-caution {
+    padding: 16px;
+  }
+  .install-caution p {
+    font-size: 11px;
+  }
+}

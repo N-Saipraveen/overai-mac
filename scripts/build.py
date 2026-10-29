@@ -44,6 +44,11 @@ if args.release:
     args.test = args.dmg = True
 elif args.notary_profile:
     parser.error("Use --notary-profile only with --release.")
+if args.dmg:
+    try:
+        import dmgbuild
+    except ImportError:
+        parser.error("DMG packaging requires dmgbuild. Install requirements-build.txt in a virtual environment and run this script with that environment's Python.")
 output.mkdir(exist_ok=True)
 validation = repo / "Validation"
 validation.mkdir(exist_ok=True)
@@ -155,7 +160,6 @@ with tempfile.TemporaryDirectory(prefix="overai-release-stage-", dir=output) as 
         image_folder = stage / "image"
         image_folder.mkdir()
         shutil.copytree(app, image_folder / app.name, symlinks=True)
-        (image_folder / "Applications").symlink_to("/Applications", target_is_directory=True)
         (image_folder / "Read Me.txt").write_text(
             "OverAI " + release["version"] + " — Built by Sai Praveen\n\n"
             "Quit the running OverAI app before updating.\n"
@@ -166,7 +170,23 @@ with tempfile.TemporaryDirectory(prefix="overai-release-stage-", dir=output) as 
             ("Signed with Developer ID and notarized by Apple.\n" if args.release else
              "UNNOTARIZED PREVIEW — ad-hoc signed, not verified by Apple. macOS Gatekeeper may block opening.\n" if args.preview else "LOCAL VALIDATION BUILD — not notarized.\n"), encoding="utf-8")
         dmg = stage / ("OverAI-" + release["version"] + "-" + release["build"] + "-" + mode + "-arm64.dmg")
-        run("hdiutil", "create", "-volname", "OverAI", "-srcfolder", image_folder, "-format", "UDZO", dmg)
+        dmgbuild.build_dmg(str(dmg), "OverAI", settings={
+            "format": "UDZO", "filesystem": "HFS+",
+            "files": [str(image_folder / "OverAI.app"), str(image_folder / "Read Me.txt")],
+            "symlinks": {"Applications": "/Applications"},
+            "hide": ["Read Me.txt"],
+            # Changing FinderInfo on a signed .app invalidates strict verification.
+            "hide_extensions": [],
+            "icon": str(repo / "Sources/OverAI/Resources/icon.icns"),
+            "background": str(repo / "assets/dmg-background.png"),
+            "window_rect": ((200, 150), (720, 512)),
+            "default_view": "icon-view", "arrange_by": None,
+            "show_toolbar": False, "show_sidebar": False, "show_status_bar": False,
+            "show_pathbar": False, "show_tab_view": False,
+            "icon_size": 96, "text_size": 12, "label_pos": "bottom",
+            "icon_locations": {"OverAI.app": (205, 268), "Applications": (515, 268)},
+            "include_icon_view_settings": True,
+        })
         run("hdiutil", "verify", dmg)
         if args.release:
             run("codesign", "--sign", identity, "--timestamp", dmg)
@@ -183,6 +203,8 @@ with tempfile.TemporaryDirectory(prefix="overai-release-stage-", dir=output) as 
                 raise RuntimeError("Disk image does not contain the validated executable")
             if os.readlink(mount / "Applications") != "/Applications":
                 raise RuntimeError("Disk image Applications link is invalid")
+            if not (mount / ".DS_Store").is_file() or not list(mount.glob(".background*")):
+                raise RuntimeError("Disk image installer layout or background is missing")
         finally:
             run("hdiutil", "detach", mount)
     # Publish generated artifacts only after every requested gate succeeds.
@@ -205,7 +227,7 @@ with tempfile.TemporaryDirectory(prefix="overai-release-stage-", dir=output) as 
         "pricing": "free", "licenseKeyRequired": False,
         "signature": identity, "notarized": args.release, "mode": mode, "checks": checks,
         "developmentModesExcluded": True, "mediaEntitlementsVerified": True, "releaseDebuggerEntitlement": False,
-        "requiredLicenseIncluded": True, "dmgMountVerified": dmg is not None,
+        "requiredLicenseIncluded": True, "dmgMountVerified": dmg is not None, "installerLayoutVerified": dmg is not None,
         "executableSHA256": hashlib.sha256((target_app / "Contents/MacOS/OverAI").read_bytes()).hexdigest(),
         "dmg": final_dmg.name if final_dmg else None,
         "dmgSHA256": hashlib.sha256(final_dmg.read_bytes()).hexdigest() if final_dmg else None,
