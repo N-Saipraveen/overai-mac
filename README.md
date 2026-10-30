@@ -1,56 +1,103 @@
-<p align="center"><img src="Sources/OverAI/Resources/logo.png" width="100" alt="OverAI app icon" /></p>
+<p align="center">
+  <img src="assets/readme/banner.png" width="100%" alt="OverAI for Mac. All your AI. One button. Privacy first. Built by Sai Praveen." />
+</p>
+
 <h1 align="center">OverAI</h1>
-<p align="center"><strong>All your AI. One button. Privacy first.</strong></p>
-<p align="center">ChatGPT, Claude, Gemini, Grok, Arena, Muse, and your own websites.<br>One floating Mac window. Your existing accounts. No AI API keys.</p>
-<p align="center"><a href="https://github.com/N-Saipraveen/overai-mac/releases/download/v3.0.1-beta.1/OverAI-3.0.1-3005-preview-arm64.dmg"><strong>↓ Download OverAI for Mac</strong></a></p>
-<p align="center">Free · Apple Silicon (M1 or newer) · macOS 14 or later</p>
-<p align="center"><a href="https://n-saipraveen.github.io/overai-mac/">Website</a> · <a href="#install-in-four-steps">Install</a> · <a href="#if-macos-blocks-the-first-launch">First-launch help</a> · <a href="https://github.com/N-Saipraveen/overai-mac/releases/tag/v3.0.1-beta.1">Release notes & checksums</a></p>
+<p align="center"><strong>Your AI websites. One floating Mac window.</strong></p>
+<p align="center">Switch between ChatGPT, Claude, Gemini, Grok, Arena, and your own websites.<br />Use your existing accounts. Keep your work in view. No AI API keys.</p>
 
-## Install in four steps
+<p align="center">
+  <img src="assets/readme/free.svg" height="28" alt="Completely free" />
+  <img src="assets/readme/macos.svg" height="28" alt="macOS 14 or later" />
+  <img src="assets/readme/silicon.svg" height="28" alt="Apple Silicon Macs" />
+  <img src="assets/readme/preview.svg" height="28" alt="Preview release" />
+</p>
 
-![Installation at a glance: download the DMG, drag OverAI into Applications, approve the preview if macOS asks, and press Command-G.](website/assets/install-guide.png)
+<p align="center">
+  <a href="https://github.com/N-Saipraveen/overai-mac/releases/download/v3.0.1-beta.1/OverAI-3.0.1-3005-preview-arm64.dmg"><strong>↓ Download OverAI for Mac</strong></a>
+  &nbsp; · &nbsp;
+  <a href="https://n-saipraveen.github.io/overai-mac/">Explore the website ↗</a>
+</p>
+<p align="center"><sub>Apple Silicon (M1 or newer) · macOS 14+ · Free, without subscriptions or license keys.<br />The current preview is ad-hoc signed and <strong>not notarized by Apple</strong>. See the first-launch steps below.</sub></p>
 
-### 1. Download
+<p align="center"><a href="#the-problem">Why OverAI</a> · <a href="#features">Features</a> · <a href="#install">Install</a> · <a href="#first-launch-on-macos">macOS help</a> · <a href="#visuals">Visuals</a> · <a href="#build-from-source">Build</a></p>
 
-**[Download the Apple Silicon DMG →](https://github.com/N-Saipraveen/overai-mac/releases/download/v3.0.1-beta.1/OverAI-3.0.1-3005-preview-arm64.dmg)**
+## The problem
 
-No account, payment, license key, or API key is needed to install OverAI. The current preview is **not notarized by Apple**, so macOS may block its first launch. The steps below explain what to do.
+Getting a little help from AI can turn into a lot of switching.
 
-### 2. Drag into Applications
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h3>Scattered websites</h3>
+      <p>Your tools live in separate tabs and windows. Finding the right one interrupts what you were doing.</p>
+    </td>
+    <td width="33%" valign="top">
+      <h3>Lost momentum</h3>
+      <p>A quick question takes you away from your editor, document, or browser. Getting back adds another step.</p>
+    </td>
+    <td width="33%" valign="top">
+      <h3>Too much on screen</h3>
+      <p>A normal browser window can appear in a screen share. A private workspace needs more care.</p>
+    </td>
+  </tr>
+</table>
 
-Open the downloaded `.dmg`. In the installer window, **drag the OverAI icon onto the Applications folder**. Wait for copying to finish, then eject the OverAI disk image.
+## The solution
 
-**Updating?** Quit your existing OverAI first, then choose **Replace** if Finder asks. Your native-app website sessions stay in place.
+**OverAI brings your AI websites into one native floating window.** Call it up with a shortcut, choose a website, and get back to your work. It opens the original websites through Apple’s WebKit, using your existing accounts.
 
-### 3. Open OverAI
+### How it works
 
-Open **Finder → Applications → OverAI**. Run the copy in Applications, not the one inside the disk image. If macOS blocks it, use [the first-launch steps below](#if-macos-blocks-the-first-launch).
+![From your shortcut to a floating window, your chosen website, and your existing account. Your Mac connects directly to the website; OverAI adds no prompt relay.](assets/readme/workflow.png)
 
-Choose **Show OverAI** or **Start Hidden**. You can change this later in Settings. Microphone setup is optional; you can skip it.
+1. **Call it up.** Press **⌘G** from any app, or choose your own shortcut.
+2. **Pick your website.** Switch between built-in providers or websites you add.
+3. **Use your account.** Sign in on the website as usual. No AI API key is required.
+4. **Get back to work.** Press the shortcut again to hide the window.
 
-### 4. Press ⌘G
+Provider accounts, subscriptions, and usage limits still apply. OverAI does not unlock paid AI models. Online websites need an internet connection.
 
-Press **Command-G** to show your window. Choose a website from the top bar, sign in with your existing account, and start using it. Press the shortcut again to hide OverAI.
+## Features
 
-Change the shortcut in **Settings → General**. Add, remove, and rearrange websites in **Settings → Websites**.
+| Feature | What you get |
+| --- | --- |
+| **One AI selector** | ChatGPT, Claude, Gemini, Grok, and Arena in one window; Muse and custom websites are supported too. |
+| **Your own lineup** | Add HTTPS websites, remove those you don’t use, and arrange them your way. |
+| **A global shortcut** | **⌘G** by default. Change it in **Settings → General**. |
+| **Capture protection** | Designed to exclude OverAI’s windows from supported recording and screen-sharing paths. Test your setup; compatibility varies. |
+| **Persistent sign-ins** | Website sessions stay in OverAI’s local WebKit store. Providers may still expire sessions or restrict embedded sign-in. |
+| **Window controls** | Adjust opacity with **− / +**, attach chosen files, and optionally enable microphone access. |
+| **Native Mac app** | Swift, AppKit, and WebKit. Websites load when visited; retained pages still use memory. |
+| **Free to use** | No OverAI subscription, account, license key, trial expiry, or payment verification. |
 
-## If macOS blocks the first launch
+**Privacy:** OverAI adds no prompt logging, analytics, or prompt relay. Your selected websites process your content under their own policies. Safari and Chrome sessions are separate and aren’t imported. Capture protection cannot guarantee invisibility or hide system dialogs and external browser windows. [Read the privacy details →](https://n-saipraveen.github.io/overai-mac/privacy.html)
 
-This preview is ad-hoc signed, with **no Apple notarization**. A message such as “Apple could not verify OverAI” or “developer cannot be verified” is expected for this build. An exception lets the app open; it is not an Apple safety certification.
+## Install
 
-Only proceed if you downloaded the official release and trust it. The release includes `SHA256SUMS.txt` so you can check the DMG against the published hash.
+![Four steps: download the DMG, drag OverAI to Applications, open the installed app, and press Command-G.](website/assets/install-guide.png)
 
-**Use macOS’s built-in approval flow:**
+1. **[Download the Apple Silicon DMG](https://github.com/N-Saipraveen/overai-mac/releases/download/v3.0.1-beta.1/OverAI-3.0.1-3005-preview-arm64.dmg).** Open the downloaded file.
+2. **Drag OverAI into Applications.** Wait for copying to finish, then eject the disk image. Updating? Quit OverAI first and choose **Replace** if asked.
+3. **Open Applications → OverAI.** Choose **Show OverAI** or **Start Hidden**. Optional microphone setup can be skipped. If macOS blocks opening, follow the steps below.
+4. **Press ⌘G.** Choose a website, sign in, and start using it. Change your shortcut in **Settings → General** and your lineup in **Settings → Websites**.
+
+**Updating preserves your native-app website sessions.** Run the installed copy from Applications, rather than from the disk image.
+
+[Full installation guide](https://n-saipraveen.github.io/overai-mac/install.html) · [Release notes & SHA-256 checksums](https://github.com/N-Saipraveen/overai-mac/releases/tag/v3.0.1-beta.1)
+
+### First launch on macOS
+
+This preview is **ad-hoc signed and not notarized by Apple**. If macOS says “Apple could not verify OverAI” or “developer cannot be verified,” only proceed with an official download you trust and have checked against its published checksum.
 
 1. Try opening **OverAI in Applications** once. Close the warning with **Done** or **OK**.
 2. Open **Apple menu → System Settings → Privacy & Security**.
-3. Scroll down to **Security**. Find the message about OverAI being blocked and click **Open Anyway**.
-4. Authenticate with Touch ID or your Mac password if asked.
-5. In the confirmation, click **Open**. Future launches should use the saved exception.
+3. Scroll to **Security**, find the message about OverAI, and click **Open Anyway**.
+4. Authenticate if asked, then click **Open**. macOS saves the exception for future launches.
 
-If **Open Anyway** is missing, try opening OverAI again and return to Privacy & Security. A managed work or school Mac may prohibit exceptions; ask its administrator. See [Apple’s current instructions](https://support.apple.com/en-us/102445).
+If **Open Anyway** is missing, try opening the app again and return to Privacy & Security. Managed Macs may prohibit exceptions; ask the administrator. [Apple’s first-launch guidance](https://support.apple.com/en-us/102445).
 
-> If macOS says OverAI **will damage your computer**, flags malware, or reports a damaged/modified app, stop. Redownload from the official release, verify its checksum, and contact **hello@saipraveen.dev**. Do not use a Terminal bypass to dismiss those warnings.
+> If macOS reports malware, says OverAI **will damage your computer**, or reports a damaged/modified app, stop. Redownload the official release, check its checksum, and contact **hello@saipraveen.dev**. Do not bypass those warnings.
 
 <details>
 <summary><strong>Terminal fallback: the xattr method (advanced)</strong></summary>
@@ -92,33 +139,55 @@ Compare the complete 64-character result with the DMG line in `SHA256SUMS.txt`. 
 
 </details>
 
-## Make it your own
+## Visuals
 
-| What you want | Where to find it |
-| --- | --- |
-| A different show/hide shortcut | Settings → General |
-| Only the websites you use | Settings → Websites |
-| Your websites in your order | Settings → Websites → move up/down |
-| A quieter startup | Settings → General → Start Hidden |
-| More or less window opacity | **− / +** in the top bar |
-| To clear saved website data | Settings → Privacy |
+<table>
+  <tr>
+    <th width="50%">One window for your websites</th>
+    <th width="50%">Your lineup, your order</th>
+  </tr>
+  <tr>
+    <td><img src="assets/readme/window.png" width="100%" alt="Interface illustration of the floating OverAI window and website selector." /></td>
+    <td><img src="assets/readme/websites.png" width="100%" alt="Settings illustration showing websites with add, remove, and ordering controls." /></td>
+  </tr>
+  <tr>
+    <td>Switch websites and show or hide your window with a shortcut.</td>
+    <td>Add your own websites and keep only the ones you want.</td>
+  </tr>
+</table>
 
-**⌘G** shows/hides · **⌘R** reloads · **⌘,** opens Settings · **Esc** dismisses the selector or hides the window · **⌘Q** quits.
+<sub>Illustrations explain the interface; they are not screenshots of live accounts. Try the interactive preview on the <a href="https://n-saipraveen.github.io/overai-mac/#experience">website</a>.</sub>
 
-## Privacy comes built in
+## Tech stack
 
-Your conversations connect directly to the selected website. OverAI adds no prompt logging, analytics, account server, or payment verification. Provider accounts, paid plans, usage limits, and privacy policies still apply.
+| Component | Technology | Purpose |
+| --- | --- | --- |
+| Native application | **Swift + AppKit** | Floating window, settings, menus, and macOS integration. |
+| Website sessions | **WKWebView + WebKit** | Original websites with a persistent local website data store. |
+| Global keyboard shortcut | **KeyboardShortcuts** | User-configurable show/hide shortcut. |
+| Installer | **dmgbuild** | Reproducible DMG with Retina artwork and an Applications link. |
+| Product website | **HTML, CSS, JavaScript + GitHub Pages** | Static site with local assets, no trackers, and an interactive illustration. |
 
-Capture protection is requested for OverAI’s own windows. The overlay stays hidden if it cannot be enabled. Compatibility depends on macOS and your meeting or recording app: **test your setup before sharing sensitive content**. System dialogs and external browser windows are outside this protection.
+Python is used for build tooling; it is **not** an app runtime. OverAI does not bundle a local model or install Ollama, Docker, or Open WebUI.
 
-Website sign-ins persist in OverAI’s local WebKit store, separate from Safari and Chrome. Providers may expire sessions or restrict embedded-browser sign-in. Websites load as you visit them; retained pages preserve their state and still use memory.
+## Release checklist
+
+- [x] Native Apple Silicon app with custom websites and shortcuts.
+- [x] Free download without licensing or payment checks.
+- [x] Visual installer and first-launch documentation.
+- [x] 79 passing checks recorded for build 3005: core policy, native lifecycle/UI, capture, and cookie persistence.
+- [ ] Developer ID signing and Apple notarization. **The current download remains an unnotarized preview.**
+
+The checks use synthetic content and do not cover every provider or meeting-app combination. The release includes its build manifest and SHA-256 checksums.
+
+## Build from source
 
 <details>
-<summary><strong>For developers: build, test, and website</strong></summary>
+<summary><strong>Requirements, build commands, and validation</strong></summary>
 
-Requires an Apple Silicon Mac, Xcode 26.3 / Swift 6.2+, and Python 3 for build tools. The app has no Python runtime. Open `OverAI.xcodeproj`, choose the **OverAI** scheme, and run.
+Requires an Apple Silicon Mac, Xcode 26.3 / Swift 6.2+, and Python 3 for build tools. Open `OverAI.xcodeproj`, choose the **OverAI** scheme, and run.
 
-For the designed DMG, install the packaging dependency in a local environment:
+To build the app and designed preview DMG:
 
 ```sh
 python3 -m venv .venv
@@ -126,28 +195,23 @@ python3 -m venv .venv
 .venv/bin/python scripts/build.py --preview
 ```
 
-Output is in `dist/`. The open-source [dmgbuild](https://github.com/dmgbuild/dmgbuild) tool writes the installer’s background, icon positions, and Applications link. It is a build dependency only. Artwork can be regenerated with `swift scripts/render-artwork.swift`.
+Output is in `dist/`. `swift test` runs the core tests. `python3 scripts/build.py --test` also checks native lifecycle, UI, capture, and cookie persistence. Full validation needs an unlocked desktop and existing Screen Recording permission for the test app.
 
-Run `swift test` for core tests. `python3 scripts/build.py --test` also checks native lifecycle, UI, capture, and cookie persistence. Full validation needs an unlocked desktop and existing Screen Recording permission for the test app; it uses synthetic content.
+For notarized distribution, install a Developer ID Application identity and a `notarytool` Keychain profile. Set `OVERAI_SIGNING_IDENTITY`, then use `--release --notary-profile OVERAI_NOTARY`. Release mode requires signing, tests, notarization, and Gatekeeper checks.
 
-For a notarized distribution, install a Developer ID Application identity and a `notarytool` Keychain profile, then use `--release --notary-profile OVERAI_NOTARY` with `OVERAI_SIGNING_IDENTITY` set. That mode requires signing, tests, notarization, and Gatekeeper checks; the preview does not claim those distribution approvals.
-
-```text
-Sources/       Swift app, shared policies, resources
-Tests/         Core and native integration checks
-website/       GitHub Pages product site and installation help
-assets/        Installer background artwork
-scripts/       Build and artwork tools
-```
-
-Website styling follows the reference in `DESIGN.md`, with OverAI’s own branding and locally served Bebas Neue under its included [SIL Open Font License](website/assets/fonts/OFL.txt).
-
-Preview the site with `python3 -m http.server 4173 --directory website`. Check links with `python3 scripts/check-website.py`. Version information is in `Release.json`.
-
-KeyboardShortcuts is pinned through Swift Package Manager; its required notice ships in `Sources/OverAI/Resources/ThirdPartyNotices.txt`. Provider artwork belongs to its respective owners. OverAI is independent and is not endorsed by Apple or the AI providers.
+Preview the website with `python3 -m http.server 4173 --directory website`; check links with `python3 scripts/check-website.py`. Website UI follows `DESIGN.md`. Regenerate this README’s artwork with `swift scripts/render-readme.swift`; installer artwork uses `swift scripts/render-artwork.swift`. Version information is in `Release.json`.
 
 </details>
 
+## Acknowledgements
+
+- [KeyboardShortcuts](https://github.com/sindresorhus/KeyboardShortcuts) for the global shortcut recorder and registration.
+- [dmgbuild](https://github.com/dmgbuild/dmgbuild) for the installer tooling.
+- [Bebas Neue](website/assets/fonts/OFL.txt) for the open-source display typeface.
+- [Reach](https://github.com/dmunish/reach#readme) for the README layout inspiration.
+
+Required dependency notices ship in [ThirdPartyNotices.txt](Sources/OverAI/Resources/ThirdPartyNotices.txt). Provider names and artwork belong to their owners. OverAI is independent and is not endorsed by Apple or the providers.
+
 ---
 
-Built by **[Sai Praveen](https://github.com/N-Saipraveen)** · **[hello@saipraveen.dev](mailto:hello@saipraveen.dev)**
+<p align="center"><strong>Built by <a href="https://github.com/N-Saipraveen">Sai Praveen</a>.</strong><br /><a href="mailto:hello@saipraveen.dev">hello@saipraveen.dev</a> · <a href="https://n-saipraveen.github.io/overai-mac/">Website</a> · <a href="https://github.com/N-Saipraveen/overai-mac/releases/latest">Download</a></p>
