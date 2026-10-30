@@ -1,0 +1,57 @@
+name: Report a bug
+description: Help reproduce a problem with OverAI.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For a macOS first-launch warning, try the [installation guide](https://n-saipraveen.github.io/overai-mac/install.html) first.
+        Share only the details needed to reproduce the problem. Remove private conversations, account details, and tokens from screenshots or logs.
+  - type: input
+    id: version
+    attributes:
+      label: OverAI version
+      placeholder: "3.0.1 (build 3005), from Settings → About"
+    validations:
+      required: true
+  - type: input
+    id: mac
+    attributes:
+      label: Mac model and macOS version
+      placeholder: "MacBook Air M3, macOS 14.7"
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: Installation source
+      options:
+        - Current Swift DMG from GitHub Releases
+        - Built the Swift app from source
+        - Older Python app
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Affected website or meeting app, if relevant
+      placeholder: "ChatGPT, a custom website, or Google Meet whole-screen sharing"
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Open OverAI…\n2. …"
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Additional details
+      description: "Optional screenshots or relevant, redacted error text."

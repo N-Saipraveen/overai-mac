@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Installation and first-launch help
+    url: https://n-saipraveen.github.io/overai-mac/install.html
+    about: Download, install, and handle macOS preview approval.
+  - name: Privacy information
+    url: https://n-saipraveen.github.io/overai-mac/privacy.html
+    about: Website sessions, permissions, and capture-protection limits.

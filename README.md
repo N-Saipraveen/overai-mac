@@ -22,6 +22,8 @@
 
 <p align="center"><a href="#the-problem">Why OverAI</a> · <a href="#features">Features</a> · <a href="#install">Install</a> · <a href="#first-launch-on-macos">macOS help</a> · <a href="#visuals">Visuals</a> · <a href="#build-from-source">Build</a></p>
 
+If OverAI is useful to you, a **[star on GitHub](https://github.com/N-Saipraveen/overai-mac)** helps other Mac users discover it. Found a problem? [Report it here](https://github.com/N-Saipraveen/overai-mac/issues/new/choose).
+
 ## The problem
 
 Getting a little help from AI can turn into a lot of switching.

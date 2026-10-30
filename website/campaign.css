@@ -681,6 +681,17 @@ h2,
   font-size: 14px;
   line-height: 1.7;
 }
+.footer-top > a:last-child {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  white-space: nowrap;
+}
+@media (max-width: 500px) {
+  .footer-top p {
+    display: none;
+  }
+}
 footer.wrap {
   border-color: #cacacb;
   padding-top: 32px;
