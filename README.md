@@ -199,7 +199,7 @@ Output is in `dist/`. `swift test` runs the core tests. `python3 scripts/build.p
 
 For notarized distribution, install a Developer ID Application identity and a `notarytool` Keychain profile. Set `OVERAI_SIGNING_IDENTITY`, then use `--release --notary-profile OVERAI_NOTARY`. Release mode requires signing, tests, notarization, and Gatekeeper checks.
 
-Preview the website with `python3 -m http.server 4173 --directory website`; check links with `python3 scripts/check-website.py`. Website UI follows `DESIGN.md`. Regenerate this README’s artwork with `swift scripts/render-readme.swift`; installer artwork uses `swift scripts/render-artwork.swift`. Version information is in `Release.json`.
+Preview the website with `python3 -m http.server 4173 --directory website`; check links with `python3 scripts/check-website.py`. Regenerate this README’s artwork with `swift scripts/render-readme.swift`; installer artwork uses `swift scripts/render-artwork.swift`. Version information is in `Release.json`.
 
 </details>
 
