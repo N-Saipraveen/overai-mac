@@ -327,15 +327,7 @@ $("#capture-toggle").addEventListener("click", () => {
 });
 
 // The product proposition, rendered with lightweight DOM/CSS instead of video.
-const positions = [
-  { x: 20, y: 25, mx: 17, my: 19 },
-  { x: 50, y: 12, mx: 50, my: 7 },
-  { x: 80, y: 25, mx: 83, my: 19 },
-  { x: 20, y: 73, mx: 17, my: 79 },
-  { x: 50, y: 86, mx: 50, my: 88 },
-  { x: 80, y: 73, mx: 83, my: 79 },
-];
-providers.forEach((provider, index) => {
+providers.forEach((provider) => {
   const create = (className) => {
     const button = document.createElement("button");
     button.className = className;
@@ -376,14 +368,6 @@ providers.forEach((provider, index) => {
   const orbit = create("orbit-node");
   orbit.dataset.provider = provider.id;
   orbit.setAttribute("aria-pressed", "false");
-  const p = positions[index];
-  Object.entries({
-    "--x": p.x + "%",
-    "--y": p.y + "%",
-    "--mx": p.mx + "%",
-    "--my": p.my + "%",
-    "--delay": -index * 1.1 + "s",
-  }).forEach(([k, v]) => orbit.style.setProperty(k, v));
   $("#orbit-providers").append(orbit);
   $("#hub-picker-options").classList.add("hub-picker-options");
   $("#hub-picker-options").append(create("hub-picker-option"));
