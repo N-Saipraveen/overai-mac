@@ -180,6 +180,26 @@ Python is used for build tooling; it is **not** an app runtime. OverAI does not 
 
 The checks use synthetic content and do not cover every provider or meeting-app combination. The release includes its build manifest and SHA-256 checksums.
 
+## Project layout
+
+```text
+OverAI.xcodeproj/       Open in Xcode
+Sources/
+├── OverAI/
+│   ├── App/           Entry point and app lifecycle
+│   ├── Browser/       Website sessions, uploads, and provider artwork
+│   ├── Settings/      Preferences and settings interface
+│   ├── System/        Shortcuts, permissions, capture protection, diagnostics
+│   ├── Windows/       Floating window and provider selector
+│   └── Resources/     App icon, provider icons, and dependency notices
+└── OverAICore/        Shared website and navigation policies
+Tests/                 Core tests and native integration checks
+Config/                App metadata, entitlements, and release version
+website/               GitHub Pages product site
+assets/                Installer artwork and README visuals
+scripts/               Build, validation, and artwork tools
+```
+
 ## Build from source
 
 <details>
@@ -191,7 +211,7 @@ To build the app and designed preview DMG:
 
 ```sh
 python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements-build.txt
+.venv/bin/python -m pip install -r scripts/requirements.txt
 .venv/bin/python scripts/build.py --preview
 ```
 
@@ -199,7 +219,7 @@ Output is in `dist/`. `swift test` runs the core tests. `python3 scripts/build.p
 
 For notarized distribution, install a Developer ID Application identity and a `notarytool` Keychain profile. Set `OVERAI_SIGNING_IDENTITY`, then use `--release --notary-profile OVERAI_NOTARY`. Release mode requires signing, tests, notarization, and Gatekeeper checks.
 
-Preview the website with `python3 -m http.server 4173 --directory website`; check links with `python3 scripts/check-website.py`. Regenerate this README’s artwork with `swift scripts/render-readme.swift`; installer artwork uses `swift scripts/render-artwork.swift`. Version information is in `Release.json`.
+Preview the website with `python3 -m http.server 4173 --directory website`; check links with `python3 scripts/check-website.py`. Regenerate this README’s artwork with `swift scripts/render-readme.swift`; installer artwork uses `swift scripts/render-artwork.swift`. Version information is in `Config/Release.json`.
 
 </details>
 

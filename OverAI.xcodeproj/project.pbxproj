@@ -6,183 +6,270 @@
 	};
 	objectVersion = "56";
 	objects = {
-		FAA1F2966D6055594206CF85 = {
+		877EBB566D1485CF79085A8F = {
 			isa = "PBXFileReference";
 			lastKnownFileType = "sourcecode.swift";
 			path = "AppDelegate.swift";
 			sourceTree = "<group>";
 		};
-		FD005CE3A4FE2D89648A6F50 = {
+		00837BF2EA4ECF608C1E2964 = {
 			isa = "PBXBuildFile";
-			fileRef = "FAA1F2966D6055594206CF85";
+			fileRef = "877EBB566D1485CF79085A8F";
 		};
-		AED1B75FB69A1C7E02E8DD41 = {
-			isa = "PBXFileReference";
-			lastKnownFileType = "sourcecode.swift";
-			path = "AppSettings.swift";
-			sourceTree = "<group>";
-		};
-		5BEDED7C740620915CFCC741 = {
-			isa = "PBXBuildFile";
-			fileRef = "AED1B75FB69A1C7E02E8DD41";
-		};
-		647DBA770B04A8063E68DAF4 = {
-			isa = "PBXFileReference";
-			lastKnownFileType = "sourcecode.swift";
-			path = "BrowserSession.swift";
-			sourceTree = "<group>";
-		};
-		8919426C539B0C9F0AF250D4 = {
-			isa = "PBXBuildFile";
-			fileRef = "647DBA770B04A8063E68DAF4";
-		};
-		7D3A87CB00AE60AADD04AEC3 = {
-			isa = "PBXFileReference";
-			lastKnownFileType = "sourcecode.swift";
-			path = "CaptureProtection.swift";
-			sourceTree = "<group>";
-		};
-		2A22D96764ABB1D91EAE6787 = {
-			isa = "PBXBuildFile";
-			fileRef = "7D3A87CB00AE60AADD04AEC3";
-		};
-		54275BE3BD9858FC14EBC2C9 = {
-			isa = "PBXFileReference";
-			lastKnownFileType = "sourcecode.swift";
-			path = "Diagnostics.swift";
-			sourceTree = "<group>";
-		};
-		7F8DB6BCC849AB7C28B75636 = {
-			isa = "PBXBuildFile";
-			fileRef = "54275BE3BD9858FC14EBC2C9";
-		};
-		2D9EE7C149037B54A99D69B6 = {
-			isa = "PBXFileReference";
-			lastKnownFileType = "sourcecode.swift";
-			path = "FileDropView.swift";
-			sourceTree = "<group>";
-		};
-		B65D90260F4A0D8D1F4A9803 = {
-			isa = "PBXBuildFile";
-			fileRef = "2D9EE7C149037B54A99D69B6";
-		};
-		501470545701674E9FC896F5 = {
-			isa = "PBXFileReference";
-			lastKnownFileType = "sourcecode.swift";
-			path = "HotkeyController.swift";
-			sourceTree = "<group>";
-		};
-		3DC19C4EDD10E2FCC4EC3BC3 = {
-			isa = "PBXBuildFile";
-			fileRef = "501470545701674E9FC896F5";
-		};
-		D1BCF5996466C28881B3B345 = {
-			isa = "PBXFileReference";
-			lastKnownFileType = "sourcecode.swift";
-			path = "OverlayController.swift";
-			sourceTree = "<group>";
-		};
-		08B238356DC463A40BBE0925 = {
-			isa = "PBXBuildFile";
-			fileRef = "D1BCF5996466C28881B3B345";
-		};
-		7A80B0C169C41457204B5882 = {
-			isa = "PBXFileReference";
-			lastKnownFileType = "sourcecode.swift";
-			path = "PermissionsController.swift";
-			sourceTree = "<group>";
-		};
-		358C5412BABC4F8409162B87 = {
-			isa = "PBXBuildFile";
-			fileRef = "7A80B0C169C41457204B5882";
-		};
-		D590009EBC609EC04DC451AA = {
-			isa = "PBXFileReference";
-			lastKnownFileType = "sourcecode.swift";
-			path = "ProviderArtwork.swift";
-			sourceTree = "<group>";
-		};
-		C428392452851D32756F5BD4 = {
-			isa = "PBXBuildFile";
-			fileRef = "D590009EBC609EC04DC451AA";
-		};
-		0A91433B52C564FD4561F563 = {
-			isa = "PBXFileReference";
-			lastKnownFileType = "sourcecode.swift";
-			path = "SettingsController.swift";
-			sourceTree = "<group>";
-		};
-		519D0FEC4431DDF9D251698B = {
-			isa = "PBXBuildFile";
-			fileRef = "0A91433B52C564FD4561F563";
-		};
-		694D44870FFBB1E3F9845801 = {
-			isa = "PBXFileReference";
-			lastKnownFileType = "sourcecode.swift";
-			path = "StartupController.swift";
-			sourceTree = "<group>";
-		};
-		7577DD0E295AE598EF902689 = {
-			isa = "PBXBuildFile";
-			fileRef = "694D44870FFBB1E3F9845801";
-		};
-		C4D41200F77674AA50C360AC = {
+		8DBB68E7700989AE3D41A260 = {
 			isa = "PBXFileReference";
 			lastKnownFileType = "sourcecode.swift";
 			path = "main.swift";
 			sourceTree = "<group>";
 		};
-		A4F9ED9D5106A4B5FB6971B4 = {
+		32C70579D3DED02599B44CC6 = {
 			isa = "PBXBuildFile";
-			fileRef = "C4D41200F77674AA50C360AC";
+			fileRef = "8DBB68E7700989AE3D41A260";
+		};
+		AA99B5DF194CE29C2C11003E = {
+			isa = "PBXGroup";
+			children = (
+				"877EBB566D1485CF79085A8F",
+				"8DBB68E7700989AE3D41A260",
+			);
+			path = "App";
+			sourceTree = "<group>";
+		};
+		26F5CD88B4B52061D36C6958 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "BrowserSession.swift";
+			sourceTree = "<group>";
+		};
+		D02A94B5E618F7678E06CAE0 = {
+			isa = "PBXBuildFile";
+			fileRef = "26F5CD88B4B52061D36C6958";
+		};
+		1CB82C1EC4F9BD668D3C26A1 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "FileDropView.swift";
+			sourceTree = "<group>";
+		};
+		D98747092DE786FE003B8982 = {
+			isa = "PBXBuildFile";
+			fileRef = "1CB82C1EC4F9BD668D3C26A1";
+		};
+		669A96DF00B97C8291E167FB = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "ProviderArtwork.swift";
+			sourceTree = "<group>";
+		};
+		DBCAB3084F7C4E856615D78A = {
+			isa = "PBXBuildFile";
+			fileRef = "669A96DF00B97C8291E167FB";
+		};
+		22B8756A0B0D68EC0207E3F7 = {
+			isa = "PBXGroup";
+			children = (
+				"26F5CD88B4B52061D36C6958",
+				"1CB82C1EC4F9BD668D3C26A1",
+				"669A96DF00B97C8291E167FB",
+			);
+			path = "Browser";
+			sourceTree = "<group>";
+		};
+		9279B6F87D2D66E2D18C50CF = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "AppSettings.swift";
+			sourceTree = "<group>";
+		};
+		ED56610EE824D1AF662029C4 = {
+			isa = "PBXBuildFile";
+			fileRef = "9279B6F87D2D66E2D18C50CF";
+		};
+		9669D1EFC808CB2BC2F83E19 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "SettingsController.swift";
+			sourceTree = "<group>";
+		};
+		4EFF3C3DC5B5ED8DEB98A96E = {
+			isa = "PBXBuildFile";
+			fileRef = "9669D1EFC808CB2BC2F83E19";
+		};
+		66F37957C833364F3CBE9296 = {
+			isa = "PBXGroup";
+			children = (
+				"9279B6F87D2D66E2D18C50CF",
+				"9669D1EFC808CB2BC2F83E19",
+			);
+			path = "Settings";
+			sourceTree = "<group>";
+		};
+		3F042CFC1E3A837E567DD913 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "CaptureProtection.swift";
+			sourceTree = "<group>";
+		};
+		B48D1ABAEB446D8D8B34F1DD = {
+			isa = "PBXBuildFile";
+			fileRef = "3F042CFC1E3A837E567DD913";
+		};
+		A384B61A2023AA6ACE578FCC = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "Diagnostics.swift";
+			sourceTree = "<group>";
+		};
+		CA21E37AAADB94040A5762B0 = {
+			isa = "PBXBuildFile";
+			fileRef = "A384B61A2023AA6ACE578FCC";
+		};
+		4076D618B9B8D83601626E5B = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "HotkeyController.swift";
+			sourceTree = "<group>";
+		};
+		69D7D449FA30FE947C7ACC63 = {
+			isa = "PBXBuildFile";
+			fileRef = "4076D618B9B8D83601626E5B";
+		};
+		D755BE495BE9A64A61D40B48 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "PermissionsController.swift";
+			sourceTree = "<group>";
+		};
+		CEB753FF83886D7567632C9A = {
+			isa = "PBXBuildFile";
+			fileRef = "D755BE495BE9A64A61D40B48";
+		};
+		7C7B95EAAD87DEBE46BB90B4 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "StartupController.swift";
+			sourceTree = "<group>";
+		};
+		FB40B5CABBFA353A3EB33895 = {
+			isa = "PBXBuildFile";
+			fileRef = "7C7B95EAAD87DEBE46BB90B4";
+		};
+		DF455725229716A4E3A1D38A = {
+			isa = "PBXGroup";
+			children = (
+				"3F042CFC1E3A837E567DD913",
+				"A384B61A2023AA6ACE578FCC",
+				"4076D618B9B8D83601626E5B",
+				"D755BE495BE9A64A61D40B48",
+				"7C7B95EAAD87DEBE46BB90B4",
+			);
+			path = "System";
+			sourceTree = "<group>";
+		};
+		A71683ADE32C846BC0F54425 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "OverlayController.swift";
+			sourceTree = "<group>";
+		};
+		ADBB1D015D11A4B0CE844B19 = {
+			isa = "PBXBuildFile";
+			fileRef = "A71683ADE32C846BC0F54425";
+		};
+		0E76FDB86BF0B76E38015F10 = {
+			isa = "PBXGroup";
+			children = (
+				"A71683ADE32C846BC0F54425",
+			);
+			path = "Windows";
+			sourceTree = "<group>";
+		};
+		D17ECA165777102FC2C44494 = {
+			isa = "PBXGroup";
+			children = (
+				"AA99B5DF194CE29C2C11003E",
+				"22B8756A0B0D68EC0207E3F7",
+				"66F37957C833364F3CBE9296",
+				"DF455725229716A4E3A1D38A",
+				"0E76FDB86BF0B76E38015F10",
+				"41D311A605520FC7B8B9A980",
+			);
+			path = "OverAI";
+			sourceTree = "<group>";
+		};
+		B2B3C76E8B145BC995749076 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "Provider.swift";
+			sourceTree = "<group>";
+		};
+		78FF852EF01B727D34CEEB75 = {
+			isa = "PBXGroup";
+			children = (
+				"B2B3C76E8B145BC995749076",
+			);
+			path = "OverAICore";
+			sourceTree = "<group>";
 		};
 		878A52FC5FF6A57D50B7B870 = {
 			isa = "PBXGroup";
 			children = (
-				"FAA1F2966D6055594206CF85",
-				"AED1B75FB69A1C7E02E8DD41",
-				"647DBA770B04A8063E68DAF4",
-				"7D3A87CB00AE60AADD04AEC3",
-				"54275BE3BD9858FC14EBC2C9",
-				"2D9EE7C149037B54A99D69B6",
-				"501470545701674E9FC896F5",
-				"D1BCF5996466C28881B3B345",
-				"7A80B0C169C41457204B5882",
-				"D590009EBC609EC04DC451AA",
-				"0A91433B52C564FD4561F563",
-				"694D44870FFBB1E3F9845801",
-				"C4D41200F77674AA50C360AC",
+				"D17ECA165777102FC2C44494",
+				"78FF852EF01B727D34CEEB75",
 			);
-			path = "Sources/OverAI";
+			path = "Sources";
 			sourceTree = "<group>";
 		};
-		6A13CE924A1749AA5F964FF2 = {
+		2CF0D311848AC8B4BD30C1B4 = {
 			isa = "PBXFileReference";
 			lastKnownFileType = "sourcecode.swift";
 			path = "SelfTestRunner.swift";
 			sourceTree = "<group>";
 		};
-		6ABD95198D6149FD645F577C = {
+		C53817BA4E590DBE6625772A = {
 			isa = "PBXBuildFile";
-			fileRef = "6A13CE924A1749AA5F964FF2";
+			fileRef = "2CF0D311848AC8B4BD30C1B4";
 		};
-		421B5053F7EF5B0761B4BBE0 = {
+		239A854AF4C06EE862E40F12 = {
 			isa = "PBXFileReference";
 			lastKnownFileType = "sourcecode.swift";
 			path = "UploadLab.swift";
 			sourceTree = "<group>";
 		};
-		FB47A71E388A3CA9D793FE6E = {
+		155FC44CEE7B771051CDB443 = {
 			isa = "PBXBuildFile";
-			fileRef = "421B5053F7EF5B0761B4BBE0";
+			fileRef = "239A854AF4C06EE862E40F12";
 		};
-		0347EAE7C199A8C101C7F934 = {
+		66EC5C9C22C292B5F679EC43 = {
 			isa = "PBXGroup";
 			children = (
-				"6A13CE924A1749AA5F964FF2",
-				"421B5053F7EF5B0761B4BBE0",
+				"2CF0D311848AC8B4BD30C1B4",
+				"239A854AF4C06EE862E40F12",
 			);
-			path = "Tests/Integration";
+			path = "Integration";
+			sourceTree = "<group>";
+		};
+		9DD78906685689EC6BE30529 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "PolicyTests.swift";
+			sourceTree = "<group>";
+		};
+		847254B9CDF966FDE6F87888 = {
+			isa = "PBXGroup";
+			children = (
+				"9DD78906685689EC6BE30529",
+			);
+			path = "OverAICoreTests";
+			sourceTree = "<group>";
+		};
+		59830EBC3A4184110566BF1A = {
+			isa = "PBXGroup";
+			children = (
+				"66EC5C9C22C292B5F679EC43",
+				"847254B9CDF966FDE6F87888",
+			);
+			path = "Tests";
 			sourceTree = "<group>";
 		};
 		9CEEC13202AFBF12EE3ABB99 = {
@@ -191,22 +278,54 @@
 			path = "Info.plist";
 			sourceTree = "<group>";
 		};
+		CCB32DA757F8CB91EA8A9F9D = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.entitlements";
+			path = "OverAI.entitlements";
+			sourceTree = "<group>";
+		};
+		A4D451EC23463726F72C43D6 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.json";
+			path = "Release.json";
+			sourceTree = "<group>";
+		};
+		B79606FB3AFEA5BD1609ED40 = {
+			isa = "PBXGroup";
+			children = (
+				"9CEEC13202AFBF12EE3ABB99",
+				"CCB32DA757F8CB91EA8A9F9D",
+				"A4D451EC23463726F72C43D6",
+			);
+			path = "Config";
+			sourceTree = "<group>";
+		};
 		7367AB9A454559025D4D8EE2 = {
 			isa = "PBXFileReference";
 			lastKnownFileType = "text";
-			path = "Sources/OverAI/Resources/ThirdPartyNotices.txt";
+			path = "ThirdPartyNotices.txt";
 			sourceTree = "<group>";
 		};
 		C2D4B446A44CE54FAB8E0115 = {
 			isa = "PBXFileReference";
 			lastKnownFileType = "image.icns";
-			path = "Sources/OverAI/Resources/icon.icns";
+			path = "icon.icns";
 			sourceTree = "<group>";
 		};
 		B75B7592BA55F183606B09B6 = {
 			isa = "PBXFileReference";
 			lastKnownFileType = "folder";
-			path = "Sources/OverAI/Resources/ProviderIcons";
+			path = "ProviderIcons";
+			sourceTree = "<group>";
+		};
+		41D311A605520FC7B8B9A980 = {
+			isa = "PBXGroup";
+			children = (
+				"7367AB9A454559025D4D8EE2",
+				"C2D4B446A44CE54FAB8E0115",
+				"B75B7592BA55F183606B09B6",
+			);
+			path = "Resources";
 			sourceTree = "<group>";
 		};
 		C28034ADE08DACD30DA91BA1 = {
@@ -240,11 +359,8 @@
 			isa = "PBXGroup";
 			children = (
 				"878A52FC5FF6A57D50B7B870",
-				"0347EAE7C199A8C101C7F934",
-				"9CEEC13202AFBF12EE3ABB99",
-				"7367AB9A454559025D4D8EE2",
-				"C2D4B446A44CE54FAB8E0115",
-				"B75B7592BA55F183606B09B6",
+				"59830EBC3A4184110566BF1A",
+				"B79606FB3AFEA5BD1609ED40",
 				"0A3E27B8CA818264D75C8D81",
 			);
 			sourceTree = "<group>";
@@ -283,21 +399,21 @@
 			isa = "PBXSourcesBuildPhase";
 			buildActionMask = "2147483647";
 			files = (
-				"FD005CE3A4FE2D89648A6F50",
-				"5BEDED7C740620915CFCC741",
-				"8919426C539B0C9F0AF250D4",
-				"2A22D96764ABB1D91EAE6787",
-				"7F8DB6BCC849AB7C28B75636",
-				"B65D90260F4A0D8D1F4A9803",
-				"3DC19C4EDD10E2FCC4EC3BC3",
-				"08B238356DC463A40BBE0925",
-				"358C5412BABC4F8409162B87",
-				"C428392452851D32756F5BD4",
-				"519D0FEC4431DDF9D251698B",
-				"7577DD0E295AE598EF902689",
-				"A4F9ED9D5106A4B5FB6971B4",
-				"6ABD95198D6149FD645F577C",
-				"FB47A71E388A3CA9D793FE6E",
+				"00837BF2EA4ECF608C1E2964",
+				"32C70579D3DED02599B44CC6",
+				"D02A94B5E618F7678E06CAE0",
+				"D98747092DE786FE003B8982",
+				"DBCAB3084F7C4E856615D78A",
+				"ED56610EE824D1AF662029C4",
+				"4EFF3C3DC5B5ED8DEB98A96E",
+				"B48D1ABAEB446D8D8B34F1DD",
+				"CA21E37AAADB94040A5762B0",
+				"69D7D449FA30FE947C7ACC63",
+				"CEB753FF83886D7567632C9A",
+				"FB40B5CABBFA353A3EB33895",
+				"ADBB1D015D11A4B0CE844B19",
+				"C53817BA4E590DBE6625772A",
+				"155FC44CEE7B771051CDB443",
 			);
 			runOnlyForDeploymentPostprocessing = "0";
 		};
@@ -340,13 +456,13 @@
 				PRODUCT_NAME = "OverAI";
 				PRODUCT_MODULE_NAME = "OverAIApp";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.overai.native";
-				INFOPLIST_FILE = "Info.plist";
+				INFOPLIST_FILE = "Config/Info.plist";
 				GENERATE_INFOPLIST_FILE = "NO";
 				MARKETING_VERSION = "3.0.1";
 				CURRENT_PROJECT_VERSION = "3005";
 				CODE_SIGN_STYLE = "Manual";
 				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_ENTITLEMENTS = "OverAI.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Config/OverAI.entitlements";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = "YES";
 				ENABLE_HARDENED_RUNTIME = "YES";
 				ENABLE_APP_SANDBOX = "NO";
@@ -377,13 +493,13 @@
 				PRODUCT_NAME = "OverAI";
 				PRODUCT_MODULE_NAME = "OverAIApp";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.overai.native";
-				INFOPLIST_FILE = "Info.plist";
+				INFOPLIST_FILE = "Config/Info.plist";
 				GENERATE_INFOPLIST_FILE = "NO";
 				MARKETING_VERSION = "3.0.1";
 				CURRENT_PROJECT_VERSION = "3005";
 				CODE_SIGN_STYLE = "Manual";
 				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_ENTITLEMENTS = "OverAI.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Config/OverAI.entitlements";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = "NO";
 				ENABLE_HARDENED_RUNTIME = "YES";
 				ENABLE_APP_SANDBOX = "NO";

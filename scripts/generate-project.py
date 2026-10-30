@@ -11,7 +11,7 @@ root = Path(__file__).resolve().parents[1]
 project = root / "OverAI.xcodeproj"
 project.mkdir(exist_ok=True)
 objects = {}
-release = json.loads((root / "Release.json").read_text())
+release = json.loads((root / "Config/Release.json").read_text())
 
 
 def ident(name):
@@ -35,31 +35,47 @@ def encode(value, depth=0):
     return json.dumps(str(value))
 
 
-source_refs = []
 source_builds = []
-for source in sorted((root / "Sources/OverAI").glob("*.swift")):
-    name = source.name
-    source_refs.append(add("file:" + name, "PBXFileReference", lastKnownFileType="sourcecode.swift", path=name, sourceTree="<group>"))
-    source_builds.append(add("build:" + name, "PBXBuildFile", fileRef=ref("file:" + name)))
 
-add("sources", "PBXGroup", children=source_refs, path="Sources/OverAI", sourceTree="<group>")
-validation_refs = []
-for source in sorted((root / "Tests/Integration").glob("*.swift")):
-    name = source.name
-    validation_refs.append(add("test-file:" + name, "PBXFileReference", lastKnownFileType="sourcecode.swift", path=name, sourceTree="<group>"))
-    source_builds.append(add("test-build:" + name, "PBXBuildFile", fileRef=ref("test-file:" + name)))
-add("integration-tests", "PBXGroup", children=validation_refs, path="Tests/Integration", sourceTree="<group>")
+
+def source_group(directory, compile_sources):
+    """Mirror source folders in Xcode; package-owned files are references only."""
+    relative = directory.relative_to(root).as_posix()
+    children = []
+    for entry in sorted(directory.iterdir(), key=lambda path: (path.is_file(), path.name)):
+        if entry.is_dir() and any(entry.rglob("*.swift")):
+            children.append(source_group(entry, compile_sources))
+        elif entry.is_file() and entry.suffix == ".swift":
+            key = "file:" + entry.relative_to(root).as_posix()
+            file_ref = add(key, "PBXFileReference", lastKnownFileType="sourcecode.swift", path=entry.name, sourceTree="<group>")
+            children.append(file_ref)
+            if compile_sources:
+                source_builds.append(add("build:" + key, "PBXBuildFile", fileRef=file_ref))
+    return add("group:" + relative, "PBXGroup", children=children, path=directory.name, sourceTree="<group>")
+
+
+app_sources = source_group(root / "Sources/OverAI", True)
+core_sources = source_group(root / "Sources/OverAICore", False)
+add("sources", "PBXGroup", children=[app_sources, core_sources], path="Sources", sourceTree="<group>")
+integration_tests = source_group(root / "Tests/Integration", True)
+core_tests = source_group(root / "Tests/OverAICoreTests", False)
+add("tests", "PBXGroup", children=[integration_tests, core_tests], path="Tests", sourceTree="<group>")
 
 add("plist", "PBXFileReference", lastKnownFileType="text.plist.xml", path="Info.plist", sourceTree="<group>")
-add("notices", "PBXFileReference", lastKnownFileType="text", path="Sources/OverAI/Resources/ThirdPartyNotices.txt", sourceTree="<group>")
-add("icon", "PBXFileReference", lastKnownFileType="image.icns", path="Sources/OverAI/Resources/icon.icns", sourceTree="<group>")
-add("provider-icons", "PBXFileReference", lastKnownFileType="folder", path="Sources/OverAI/Resources/ProviderIcons", sourceTree="<group>")
+add("entitlements", "PBXFileReference", lastKnownFileType="text.plist.entitlements", path="OverAI.entitlements", sourceTree="<group>")
+add("release", "PBXFileReference", lastKnownFileType="text.json", path="Release.json", sourceTree="<group>")
+add("config", "PBXGroup", children=[ref("plist"), ref("entitlements"), ref("release")], path="Config", sourceTree="<group>")
+add("notices", "PBXFileReference", lastKnownFileType="text", path="ThirdPartyNotices.txt", sourceTree="<group>")
+add("icon", "PBXFileReference", lastKnownFileType="image.icns", path="icon.icns", sourceTree="<group>")
+add("provider-icons", "PBXFileReference", lastKnownFileType="folder", path="ProviderIcons", sourceTree="<group>")
+resources = add("resources", "PBXGroup", children=[ref("notices"), ref("icon"), ref("provider-icons")], path="Resources", sourceTree="<group>")
+objects[app_sources]["children"].append(resources)
 add("provider-icons-build", "PBXBuildFile", fileRef=ref("provider-icons"))
 add("notices-build", "PBXBuildFile", fileRef=ref("notices"))
 add("icon-build", "PBXBuildFile", fileRef=ref("icon"))
 add("product", "PBXFileReference", explicitFileType="wrapper.application", includeInIndex="0", path="OverAI.app", sourceTree="BUILT_PRODUCTS_DIR")
 add("products", "PBXGroup", children=[ref("product")], name="Products", sourceTree="<group>")
-add("main", "PBXGroup", children=[ref("sources"), ref("integration-tests"), ref("plist"), ref("notices"), ref("icon"), ref("provider-icons"), ref("products")], sourceTree="<group>")
+add("main", "PBXGroup", children=[ref("sources"), ref("tests"), ref("config"), ref("products")], sourceTree="<group>")
 add("keyboard-package", "XCRemoteSwiftPackageReference", repositoryURL="https://github.com/sindresorhus/KeyboardShortcuts", requirement={"kind": "exactVersion", "version": "3.1.0"})
 add("core-package", "XCLocalSwiftPackageReference", relativePath=".")
 add("keyboard-product", "XCSwiftPackageProductDependency", package=ref("keyboard-package"), productName="KeyboardShortcuts")
@@ -78,9 +94,9 @@ for config in ["Debug", "Release"]:
     })
     add("app-" + config, "XCBuildConfiguration", name=config, buildSettings={
         "PRODUCT_NAME": "OverAI", "PRODUCT_MODULE_NAME": "OverAIApp", "PRODUCT_BUNDLE_IDENTIFIER": "com.overai.native",
-        "INFOPLIST_FILE": "Info.plist", "GENERATE_INFOPLIST_FILE": "NO", "MARKETING_VERSION": release["version"],
+        "INFOPLIST_FILE": "Config/Info.plist", "GENERATE_INFOPLIST_FILE": "NO", "MARKETING_VERSION": release["version"],
         "CURRENT_PROJECT_VERSION": release["build"], "CODE_SIGN_STYLE": "Manual", "CODE_SIGN_IDENTITY": "-",
-        "CODE_SIGN_ENTITLEMENTS": "OverAI.entitlements",
+        "CODE_SIGN_ENTITLEMENTS": "Config/OverAI.entitlements",
         "CODE_SIGN_INJECT_BASE_ENTITLEMENTS": "YES" if config == "Debug" else "NO",
         "ENABLE_HARDENED_RUNTIME": "YES", "ENABLE_APP_SANDBOX": "NO", "COMBINE_HIDPI_IMAGES": "YES",
         "LD_RUNPATH_SEARCH_PATHS": ["$(inherited)", "@executable_path/../Frameworks"],

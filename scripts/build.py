@@ -25,7 +25,7 @@ parser.add_argument("--release", action="store_true", help="Require Developer ID
 parser.add_argument("--notary-profile", help="Existing notarytool Keychain profile; no passwords on the command line")
 args = parser.parse_args()
 repo = Path(__file__).resolve().parents[1]
-release = json.loads((repo / "Release.json").read_text())
+release = json.loads((repo / "Config/Release.json").read_text())
 output = repo / "dist"
 identity = os.environ.get("OVERAI_SIGNING_IDENTITY", "-")
 if args.release and args.preview:
@@ -48,7 +48,7 @@ if args.dmg:
     try:
         import dmgbuild
     except ImportError:
-        parser.error("DMG packaging requires dmgbuild. Install requirements-build.txt in a virtual environment and run this script with that environment's Python.")
+        parser.error("DMG packaging requires dmgbuild. Install scripts/requirements.txt in a virtual environment and run this script with that environment's Python.")
 output.mkdir(exist_ok=True)
 validation = repo / "Validation"
 validation.mkdir(exist_ok=True)
@@ -68,7 +68,7 @@ def verify(app):
         raise RuntimeError("Release build must not allow debugger attachment")
     info = plistlib.loads((app / "Contents/Info.plist").read_bytes())
     if info["CFBundleShortVersionString"] != release["version"] or info["CFBundleVersion"] != release["build"]:
-        raise RuntimeError("Bundle version does not match Release.json")
+        raise RuntimeError("Bundle version does not match Config/Release.json")
     notices = app / "Contents/Resources/ThirdPartyNotices.txt"
     if not notices.is_file() or "MIT License" not in notices.read_text():
         raise RuntimeError("Required dependency license text is missing")
@@ -178,7 +178,7 @@ with tempfile.TemporaryDirectory(prefix="overai-release-stage-", dir=output) as 
             # Changing FinderInfo on a signed .app invalidates strict verification.
             "hide_extensions": [],
             "icon": str(repo / "Sources/OverAI/Resources/icon.icns"),
-            "background": str(repo / "assets/dmg-background.png"),
+            "background": str(repo / "assets/installer/dmg-background.png"),
             "window_rect": ((200, 150), (720, 512)),
             "default_view": "icon-view", "arrange_by": None,
             "show_toolbar": False, "show_sidebar": False, "show_status_bar": False,

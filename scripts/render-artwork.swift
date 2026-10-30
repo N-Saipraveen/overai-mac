@@ -1,7 +1,7 @@
 import AppKit
 
 let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-let output = root.appendingPathComponent("assets")
+let output = root.appendingPathComponent("assets/installer")
 try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
 let logo = NSImage(contentsOf: root.appendingPathComponent("Sources/OverAI/Resources/logo.png"))!
 let ink = NSColor(srgbRed: 0.15, green: 0.18, blue: 0.14, alpha: 1)
@@ -47,8 +47,8 @@ func dmg() {
     text("Built by Sai Praveen", NSRect(x: 35, y: 452, width: 250, height: 16), size: 8, color: muted)
     text("Apple Silicon · macOS 14+", NSRect(x: 440, y: 452, width: 245, height: 16), size: 8, color: muted)
 }
-try render("assets/dmg-background.png", size: NSSize(width: 720, height: 480), scale: 1, draw: dmg)
-try render("assets/dmg-background@2x.png", size: NSSize(width: 720, height: 480), draw: dmg)
+try render("assets/installer/dmg-background.png", size: NSSize(width: 720, height: 480), scale: 1, draw: dmg)
+try render("assets/installer/dmg-background@2x.png", size: NSSize(width: 720, height: 480), draw: dmg)
 try render("website/assets/install-guide.png", size: NSSize(width: 1000, height: 330)) {
     paper.setFill(); NSRect(x: 0, y: 0, width: 1000, height: 330).fill()
     text("From download to your first conversation.", NSRect(x: 36, y: 25, width: 920, height: 40), size: 27, weight: .medium)
