@@ -140,6 +140,8 @@ assets/        Installer background artwork
 scripts/       Build and artwork tools
 ```
 
+Website styling follows the reference in `DESIGN.md`, with OverAI’s own branding and locally served Bebas Neue under its included [SIL Open Font License](website/assets/fonts/OFL.txt).
+
 Preview the site with `python3 -m http.server 4173 --directory website`. Check links with `python3 scripts/check-website.py`. Version information is in `Release.json`.
 
 KeyboardShortcuts is pinned through Swift Package Manager; its required notice ships in `Sources/OverAI/Resources/ThirdPartyNotices.txt`. Provider artwork belongs to its respective owners. OverAI is independent and is not endorsed by Apple or the AI providers.
